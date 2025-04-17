@@ -40,7 +40,11 @@ export interface Project {
      * Construction status of project.
      */
     constructionStatus?: ConstructionStatusType;
-    id?:                 string;
+    /**
+     * The developer of the project.
+     */
+    developer?: Developer;
+    id?:        string;
     /**
      * Sequence of all language specific content and texts.
      */
@@ -670,6 +674,51 @@ export enum ConstructionStatusType {
 }
 
 /**
+ * The developer of the project.
+ *
+ * An organization.
+ *
+ * The company selling.
+ *
+ * The company selling
+ */
+export interface Developer {
+    address?: Address;
+    brand?:   string;
+    email?:   string;
+    /**
+     * This field is depricated and will be removed in a future major version!
+     */
+    emailRem?:     string;
+    id?:           string;
+    languageCode?: string;
+    legalName?:    string;
+    logo?:         Image;
+    mobile?:       string;
+    phone?:        string;
+    website?:      Website;
+}
+
+/**
+ * Picture from inside or outside, typically used in image galleries.
+ */
+export interface Image {
+    description?: string;
+    mimeType?:    string;
+    title?:       string;
+    url:          string;
+}
+
+/**
+ * Sellers URL, typically the company website.
+ */
+export interface Website {
+    label?: string;
+    title?: string;
+    url:    string;
+}
+
+/**
  * One for each language, a set of language specific content and texts.
  */
 export interface ProjectLocalization {
@@ -740,16 +789,6 @@ export interface Document {
     mimeType?: string;
     title?:    string;
     url:       string;
-}
-
-/**
- * Picture from inside or outside, typically used in image galleries.
- */
-export interface Image {
-    description?: string;
-    mimeType?:    string;
-    title?:       string;
-    url:          string;
 }
 
 /**
@@ -825,9 +864,9 @@ export interface ProjectSeller {
     contactPerson?: Person;
     inquiryEmail?:  string;
     /**
-     * The company selling
+     * The company selling.
      */
-    organization?: Organization;
+    organization?: Developer;
 }
 
 /**
@@ -847,35 +886,6 @@ export interface Person {
     mobile?:     string;
     note?:       string;
     phone?:      string;
-}
-
-/**
- * The company selling
- *
- * An organization selling the property.
- */
-export interface Organization {
-    address?: Address;
-    brand?:   string;
-    email?:   string;
-    /**
-     * This field is depricated and will be removed in a future major version!
-     */
-    emailRem?:  string;
-    id?:        string;
-    legalName?: string;
-    mobile?:    string;
-    phone?:     string;
-    website?:   Website;
-}
-
-/**
- * Sellers URL, typically the company website.
- */
-export interface Website {
-    label?: string;
-    title?: string;
-    url:    string;
 }
 
 /**
@@ -2354,7 +2364,7 @@ export interface PropertySeller {
     /**
      * The company selling
      */
-    organization?: Organization;
+    organization?: Developer;
     /**
      * Person responsible opening the door for visiting.
      */

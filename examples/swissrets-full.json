@@ -223,6 +223,11 @@
             "url": "http://www.example.com",
             "label": "link to website",
             "title": "website title"
+          },
+          "languageCode": "FR",
+          "logo": {
+            "url": "https://www.example.com/example.jpg",
+            "mimeType": "image/jpeg"
           }
         },
         "contactPerson": {
@@ -244,6 +249,41 @@
           "phone": "+41446252222",
           "gender": "",
           "note": ""
+        }
+      },
+      "developer": {
+        "id": "smg-agency-id-123",
+        "address": {
+          "countryCode": "CH",
+          "locality": "Rheinfelden",
+          "region": "AG",
+          "postalCode": "4310",
+          "postOfficeBoxNumber": "123",
+          "street": "Hauptstrasse",
+          "streetNumber": "44",
+          "streetAddition": "d",
+          "subunit": 12,
+          "geo": {
+            "latitude": 43.5417,
+            "longitude": 8.5417,
+            "elevation": 128
+          }
+        },
+        "legalName": "Demo AG",
+        "brand": "Demo AG",
+        "email": "test@example.com",
+        "emailRem": "test@example.com",
+        "phone": "+41446252222",
+        "mobile": "+41446252222",
+        "website": {
+          "url": "http://www.example.com",
+          "label": "link to website",
+          "title": "website title"
+        },
+        "languageCode": "FR",
+        "logo": {
+          "url": "https://www.example.com/example.jpg",
+          "mimeType": "image/jpeg"
         }
       }
     }

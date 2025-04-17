@@ -61,7 +61,7 @@
           "properties": {
             "organization": {
               "$ref": "#/$defs/organizationType",
-              "description": "The company selling"
+              "description": "The company selling."
             },
             "contactPerson": {
               "$ref": "#/$defs/personType",
@@ -73,6 +73,10 @@
               "$ref": "#/$defs/emailType"
             }
           }
+        },
+        "developer": {
+          "$ref": "#/$defs/organizationType",
+          "description": "The developer of the project."
         },
         "availability": {
           "type": "object",
@@ -4185,7 +4189,7 @@
       }
     },
     "organizationType": {
-      "description": "An organization selling the property.",
+      "description": "An organization.",
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -4216,6 +4220,12 @@
         },
         "website": {
           "$ref": "#/$defs/websiteType"
+        },
+        "languageCode": {
+          "$ref": "#/$defs/languageCodeType"
+        },
+        "logo": {
+          "$ref": "#/$defs/attachmentImageType"
         }
       }
     },
