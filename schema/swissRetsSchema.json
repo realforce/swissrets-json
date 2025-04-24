@@ -1886,7 +1886,7 @@
           "additionalProperties": false,
           "properties": {
             "inquiryEmail": {
-              "title": "The emailaddress dedicated for receiving inquiries and applications. This email address should not be presented publicly and is only intended as an indirect recipient using an online form or similar.",
+              "title": "The email address dedicated for receiving inquiries and applications. This email address should not be presented publicly and is only intended as an indirect recipient using an online form or similar.",
               "$ref": "#/$defs/emailType"
             },
             "organization": {
@@ -1915,6 +1915,14 @@
             "$ref": "#/$defs/localizationType"
           },
           "description": "Sequence of all language specific content and texts."
+        },
+        "isDirectTransaction": {
+          "type": "boolean",
+          "description": "Whether the transaction is direct or via a broker"
+        },
+        "isSubjectToVat": {
+          "$ref": "#/$defs/applicableType",
+          "description": "Property is subject to VAT."
         }
       },
       "required": ["id", "referenceId", "type", "availability", "localizations"]
@@ -2636,6 +2644,11 @@
           "type": "number",
           "minimum": 0,
           "description": "Total number of rooms."
+        },
+        "numberOfBedrooms": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Number of bedrooms."
         },
         "numberOfShowers": {
           "type": "integer",
@@ -4016,6 +4029,121 @@
         "hasWorkshop": {
           "$ref": "#/$defs/applicableType",
           "title": "applicableType"
+        },
+        "style": {
+          "type": "string",
+          "enum": [
+            "Classic",
+            "Modern",
+            "Rustic"
+          ]
+        },
+        "position": {
+          "type": "string",
+          "enum": [
+            "basement",
+            "floor",
+            "garden",
+            "ground",
+            "lastStage",
+            "loft",
+            "lowerLevel",
+            "mezzanine",
+            "penthouse",
+            "raised",
+            "singleStorey",
+            "splitLevel",
+            "upperLevel",
+            "waterfront"
+          ]
+        },
+        "orientation": {
+          "type": "string",
+          "enum": [
+            "east",
+            "north",
+            "south",
+            "west",
+            "north-east",
+            "north-west",
+            "south-east",
+            "south-west"
+          ]
+        },
+        "view": {
+          "type": "array",
+          "description": "What you can see out of windows of the property.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "city",
+              "commanding",
+              "countryside",
+              "courtyard",
+              "exterior",
+              "forest",
+              "garden",
+              "golf",
+              "greenery",
+              "harbor",
+              "hills",
+              "interior",
+              "lake",
+              "main stem",
+              "monument",
+              "mountain",
+              "nice view",
+              "obstructed",
+              "panoramic",
+              "park",
+              "river",
+              "rural",
+              "sea",
+              "ski slopes",
+              "sky",
+              "slight",
+              "street",
+              "swimming pool",
+              "unobstructed",
+              "village"
+            ]
+          }
+        },
+        "acoustics": {
+          "type": "string",
+          "description": "How loud is the environment.",
+          "enum": [
+            "noisy",
+            "normal",
+            "calm"
+          ]
+        },
+        "faceToFace": {
+          "$ref": "#/$defs/applicableType",
+          "title": "face-to-face",
+          "description": "Property is located fa-to-face with another property."
+        },
+        "energy": {
+          "type": "string",
+          "description": "Energy source.",
+          "enum": [
+            "aero-thermal",
+            "charcoal",
+            "electric",
+            "fuel oil",
+            "gas",
+            "geothermal probe",
+            "heat pump",
+            "hot water",
+            "pellets",
+            "remote",
+            "solar",
+            "wood"
+          ]
+        },
+        "amperes": {
+          "type": "number",
+          "minimum": 0
         }
       }
     },
@@ -4081,33 +4209,7 @@
           "$ref": "#/$defs/currencyType"
         },
         "rent": {
-          "description": "Recurring rental price.",
-          "title": "propertyPriceRent",
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "gross": {
-              "description": "Gross rental price.",
-              "type": "integer",
-              "minimum": 0
-            },
-            "net": {
-              "description": "Net rental price.",
-              "type": "integer",
-              "minimum": 0
-            },
-            "extra": {
-              "description": "Extra rental price.",
-              "type": "integer",
-              "minimum": 0
-            },
-            "interval": {
-              "$ref": "#/$defs/priceIntervalType"
-            },
-            "referring": {
-              "$ref": "#/$defs/priceReferringType"
-            }
-          }
+          "$ref": "#/$defs/priceRentType"
         },
         "buy": {
           "description": "One time buy prices.",
@@ -4178,6 +4280,37 @@
           },
           "required": ["amount"]
         },
+        "additionalCharges": {
+          "type": "object",
+          "description": "Additional monthly or annual charges.",
+          "properties": {
+            "includedInPrice": {
+              "$ref": "#/$defs/applicableType",
+              "title": "IncludedInPrice",
+              "description": "Defines if additional charges are included into the main rent/buy price."
+            },
+            "annual": {
+              "type": "integer",
+              "description": "Annual charges for the property",
+              "minimum": 0
+            },
+            "heating": {
+              "type": "integer",
+              "description": "Monthly charges for the property heating.",
+              "minimum": 0
+            },
+            "ppe": {
+              "type": "integer",
+              "description": "Monthly charges for the property PPE.",
+              "minimum": 0
+            },
+            "commercialExpenses": {
+              "type": "integer",
+              "description": "Annual charges for the property commercial expenses per square meter.",
+              "minimum": 0
+            }
+          }
+        },
         "additionalOffers": {
           "title": "AdditionalOffers",
           "type": "array",
@@ -4185,6 +4318,67 @@
           "items": {
             "$ref": "#/$defs/additionalOfferType"
           }
+        },
+        "extra": {
+          "type": "object",
+          "description": "Extra price-related values.",
+          "properties": {
+            "currentIncome": {
+              "$ref": "#/$defs/priceRentType",
+              "description": "Current income for the property in rent."
+            },
+            "yield": {
+              "type": "number",
+              "description": "Rental yield, %",
+              "minimum": 0
+            },
+            "tax": {
+              "type": "number",
+              "minimum": 0
+            },
+            "taxRate": {
+              "type": "number",
+              "description": "The tax rate of the property, %.",
+              "minimum": 0
+            },
+            "renovationFound": {
+              "type": "number",
+              "minimum": 0
+            },
+            "stockInTrade": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    "priceRentType": {
+      "type": "object",
+      "title": "propertyPriceRent",
+      "description": "Recurring rental price.",
+      "additionalProperties": false,
+      "properties": {
+        "gross": {
+          "description": "Gross rental price.",
+          "type": "integer",
+          "minimum": 0
+        },
+        "net": {
+          "description": "Net rental price.",
+          "type": "integer",
+          "minimum": 0
+        },
+        "extra": {
+          "description": "Extra rental price.",
+          "type": "integer",
+          "minimum": 0
+        },
+        "interval": {
+          "$ref": "#/$defs/priceIntervalType"
+        },
+        "referring": {
+          "$ref": "#/$defs/priceReferringType"
         }
       }
     },
@@ -4532,6 +4726,19 @@
             "room-workroom",
             "room-storage-basement"
           ]
+        },
+        "includedInPrice": {
+          "$ref": "#/$defs/applicableType",
+          "title": "IncludedInPrice",
+          "description": "Defines if this additional offer price is included into the main rent/buy price."
+        },
+        "isOptional": {
+          "$ref": "#/$defs/applicableType",
+          "title": "IsOptional",
+          "description": "Defines if this additional offer is optional. If it's mandatory - a client can't decline it."
+        },
+        "vat": {
+          "$ref": "#/$defs/applicableType"
         },
         "interval": {
           "$ref": "#/$defs/priceIntervalType"

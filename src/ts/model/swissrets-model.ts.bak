@@ -503,6 +503,8 @@ export interface ProjectCharacteristics {
  *
  * Pets are allowed or not tolerated.
  *
+ * Property is located fa-to-face with another property.
+ *
  * Has an attic.
  *
  * Balcony available.
@@ -656,6 +658,15 @@ export interface ProjectCharacteristics {
  * Built on a sloping hillside.
  *
  * Built on a sloping hillside towards the south.
+ *
+ * Property is subject to VAT.
+ *
+ * Defines if additional charges are included into the main rent/buy price.
+ *
+ * Defines if this additional offer price is included into the main rent/buy price.
+ *
+ * Defines if this additional offer is optional. If it's mandatory - a client can't decline
+ * it.
  */
 export enum ApplicableType {
     Applies = "applies",
@@ -971,6 +982,14 @@ export interface Property {
      */
     id: string;
     /**
+     * Whether the transaction is direct or via a broker
+     */
+    isDirectTransaction?: boolean;
+    /**
+     * Property is subject to VAT.
+     */
+    isSubjectToVat?: ApplicableType;
+    /**
      * Sequence of all language specific content and texts.
      */
     localizations: PropertyLocalization[];
@@ -1149,8 +1168,13 @@ export enum PropertyCategory {
  * The cold facts, to represent the property or offer.
  */
 export interface PropertyCharacteristics {
+    /**
+     * How loud is the environment.
+     */
+    acoustics?:           Acoustics;
     agriculture?:         string;
     airFiltrationSystem?: string;
+    amperes?:             number;
     amphibiousCar?:       string;
     /**
      * If there is a balcony (non ground floor outside area) this field would specify the area
@@ -1343,9 +1367,17 @@ export interface PropertyCharacteristics {
     /**
      * Maximum elevator load in kg.
      */
-    elevatorLoad?:        number;
-    engineGenerator?:     string;
-    fabric?:              string;
+    elevatorLoad?: number;
+    /**
+     * Energy source.
+     */
+    energy?:          Energy;
+    engineGenerator?: string;
+    fabric?:          string;
+    /**
+     * Property is located fa-to-face with another property.
+     */
+    faceToFace?:          ApplicableType;
     fireAlarmSystem?:     string;
     fireHoseCabinets?:    string;
     fireSprinklerSystem?: string;
@@ -1890,6 +1922,10 @@ export interface PropertyCharacteristics {
      */
     numberOfBathrooms?: number;
     /**
+     * Number of bedrooms.
+     */
+    numberOfBedrooms?: number;
+    /**
      * Total amount of floors.
      */
     numberOfFloors?: number;
@@ -1929,6 +1965,7 @@ export interface PropertyCharacteristics {
     onHillsideSouth?: ApplicableType;
     onMainRoad?:      string;
     optician?:        string;
+    orientation?:     Orientation;
     outsideCamera?:   string;
     oven?:            string;
     paddle?:          string;
@@ -1943,6 +1980,7 @@ export interface PropertyCharacteristics {
     photo?:           string;
     placeOfWorship?:  string;
     porkButcher?:     string;
+    position?:        Position;
     press?:           string;
     pressing?:        string;
     pressurizedAir?:  string;
@@ -1970,6 +2008,7 @@ export interface PropertyCharacteristics {
     spa?:             string;
     spring?:          string;
     station?:         string;
+    style?:           Style;
     supermarket?:     string;
     synagogue?:       string;
     tableware?:       string;
@@ -1997,7 +2036,11 @@ export interface PropertyCharacteristics {
     videoArcade?:                  string;
     videoGame?:                    string;
     videoSecurity?:                string;
-    vinyl?:                        string;
+    /**
+     * What you can see out of windows of the property.
+     */
+    view?:  View[];
+    vinyl?: string;
     /**
      * Building volume in m³
      */
@@ -2056,6 +2099,100 @@ export interface PropertyCharacteristics {
      * Year of last renovation, in four digits.
      */
     yearLastRenovated?: number;
+}
+
+/**
+ * How loud is the environment.
+ */
+export enum Acoustics {
+    Calm = "calm",
+    Noisy = "noisy",
+    Normal = "normal",
+}
+
+/**
+ * Energy source.
+ */
+export enum Energy {
+    AeroThermal = "aero-thermal",
+    Charcoal = "charcoal",
+    Electric = "electric",
+    FuelOil = "fuel oil",
+    Gas = "gas",
+    GeothermalProbe = "geothermal probe",
+    HeatPump = "heat pump",
+    HotWater = "hot water",
+    Pellets = "pellets",
+    Remote = "remote",
+    Solar = "solar",
+    Wood = "wood",
+}
+
+export enum Orientation {
+    East = "east",
+    North = "north",
+    NorthEast = "north-east",
+    NorthWest = "north-west",
+    South = "south",
+    SouthEast = "south-east",
+    SouthWest = "south-west",
+    West = "west",
+}
+
+export enum Position {
+    Basement = "basement",
+    Floor = "floor",
+    Garden = "garden",
+    Ground = "ground",
+    LastStage = "lastStage",
+    Loft = "loft",
+    LowerLevel = "lowerLevel",
+    Mezzanine = "mezzanine",
+    Penthouse = "penthouse",
+    Raised = "raised",
+    SingleStorey = "singleStorey",
+    SplitLevel = "splitLevel",
+    UpperLevel = "upperLevel",
+    Waterfront = "waterfront",
+}
+
+export enum Style {
+    Classic = "Classic",
+    Modern = "Modern",
+    Rustic = "Rustic",
+}
+
+export enum View {
+    City = "city",
+    Commanding = "commanding",
+    Countryside = "countryside",
+    Courtyard = "courtyard",
+    Exterior = "exterior",
+    Forest = "forest",
+    Garden = "garden",
+    Golf = "golf",
+    Greenery = "greenery",
+    Harbor = "harbor",
+    Hills = "hills",
+    Interior = "interior",
+    Lake = "lake",
+    MainStem = "main stem",
+    Monument = "monument",
+    Mountain = "mountain",
+    NiceView = "nice view",
+    Obstructed = "obstructed",
+    Panoramic = "panoramic",
+    Park = "park",
+    River = "river",
+    Rural = "rural",
+    Sea = "sea",
+    SkiSlopes = "ski slopes",
+    Sky = "sky",
+    Slight = "slight",
+    Street = "street",
+    SwimmingPool = "swimming pool",
+    Unobstructed = "unobstructed",
+    Village = "village",
 }
 
 /**
@@ -2199,6 +2336,10 @@ export enum MinergieCertificationType {
  */
 export interface PropertyPrices {
     /**
+     * Additional monthly or annual charges.
+     */
+    additionalCharges?: AdditionalCharges;
+    /**
      * List of extras.
      */
     additionalOffers?: AdditionalOffer[];
@@ -2216,15 +2357,53 @@ export interface PropertyPrices {
      */
     deposit?: Deposit;
     /**
-     * Recurring rental price.
+     * Extra price-related values.
      */
-    rent?: PropertyPriceRent;
+    extra?: Extra;
+    rent?:  PropertyPriceRent;
+}
+
+/**
+ * Additional monthly or annual charges.
+ */
+export interface AdditionalCharges {
+    /**
+     * Annual charges for the property
+     */
+    annual?: number;
+    /**
+     * Annual charges for the property commercial expenses per square meter.
+     */
+    commercialExpenses?: number;
+    /**
+     * Monthly charges for the property heating.
+     */
+    heating?: number;
+    /**
+     * Defines if additional charges are included into the main rent/buy price.
+     */
+    includedInPrice?: ApplicableType;
+    /**
+     * Monthly charges for the property PPE.
+     */
+    ppe?: number;
+    [property: string]: any;
 }
 
 export interface AdditionalOffer {
-    interval?: PriceIntervalType;
-    price:     number;
-    type:      AdditionalOfferType;
+    /**
+     * Defines if this additional offer price is included into the main rent/buy price.
+     */
+    includedInPrice?: ApplicableType;
+    interval?:        PriceIntervalType;
+    /**
+     * Defines if this additional offer is optional. If it's mandatory - a client can't decline
+     * it.
+     */
+    isOptional?: ApplicableType;
+    price:       number;
+    type:        AdditionalOfferType;
+    vat?:        ApplicableType;
 }
 
 export enum AdditionalOfferType {
@@ -2301,6 +2480,30 @@ export enum DepositType {
 }
 
 /**
+ * Extra price-related values.
+ */
+export interface Extra {
+    /**
+     * Current income for the property in rent.
+     */
+    currentIncome?:   PropertyPriceRent;
+    renovationFound?: number;
+    stockInTrade?:    number;
+    tax?:             number;
+    /**
+     * The tax rate of the property, %.
+     */
+    taxRate?: number;
+    /**
+     * Rental yield, %
+     */
+    yield?: number;
+    [property: string]: any;
+}
+
+/**
+ * Current income for the property in rent.
+ *
  * Recurring rental price.
  */
 export interface PropertyPriceRent {
