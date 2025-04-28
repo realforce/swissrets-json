@@ -1923,6 +1923,39 @@
         "isSubjectToVat": {
           "$ref": "#/$defs/applicableType",
           "description": "Property is subject to VAT."
+        },
+        "dimensions": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "spaces": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/spaceType"
+              }
+            },
+            "habitableArea": {
+              "type": "number",
+              "minimum": 0
+            },
+            "weightedArea": {
+              "type": "number",
+              "minimum": 0
+            },
+            "usableArea": {
+              "type": "number",
+              "minimum": 0
+            },
+            "surfacePPE": {
+              "type": "number",
+              "minimum": 0
+            },
+            "land": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Size of land in m²"
+            }
+          }
         }
       },
       "required": ["id", "referenceId", "type", "availability", "localizations"]
@@ -2094,6 +2127,11 @@
           "type": "number",
           "minimum": 0,
           "description": "Property land area in m²"
+        },
+        "areaPropertyGround": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property ground area in m²"
         },
         "areaCellar": {
           "type": "number",
@@ -4756,6 +4794,188 @@
           "minimum": 0
         }
       }
+    },
+    "spaceType": {
+      "type": "object",
+      "description": "Property space",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "enum": [
+            "Accommodation(s)",
+            "Apartment(s)",
+            "Arcade(s)",
+            "Attic(s)",
+            "Balcony(ies)",
+            "Barn(s)",
+            "Basement(s)",
+            "Bathroom(s)",
+            "Bathroom(s) / Lavatory(ies)",
+            "Bedroom(s)",
+            "Bike storage room(s)",
+            "Box(es)",
+            "Cabin(s)",
+            "Cafeteria(s)",
+            "Carnotzet(s)",
+            "Cellar(s)",
+            "Closet(s)",
+            "Corridor(s)",
+            "Courtyard(s)",
+            "Cupboard(s)",
+            "Dining room(s)",
+            "Nightclub(s)",
+            "Double reception room(s)",
+            "Entrance(s)",
+            "Exercise room(s)",
+            "Garage(s)",
+            "Garbage room(s)",
+            "Garden(s)",
+            "Garden shelter(s)",
+            "Hall(s)",
+            "Hallway(s)",
+            "Hammam(s)",
+            "Home cinema(s)",
+            "House(s)",
+            "Indoor parking(s)",
+            "Indoor swimming pool(s)",
+            "Kitchen(s)",
+            "Land(s)",
+            "Landing(s)",
+            "Laundry room(s)",
+            "Lavatory(ies)",
+            "Library(ies)",
+            "Linen room(s)",
+            "Living-room(s)",
+            "Living room(s)/dining area(s)",
+            "Loft(s)",
+            "Loggia(s)",
+            "Maid's room(s)",
+            "Maid's studio(s)",
+            "Maintenance room(s)",
+            "Master bedroom(s)",
+            "Meeting room(s)",
+            "Mezzanine(s)",
+            "Not used",
+            "Open space(s)",
+            "Other(s)",
+            "Outbuilding(s)",
+            "Outdoor parking(s)",
+            "Panic room(s)",
+            "Park(s)",
+            "Parking(s)",
+            "Patio(s)",
+            "Play room(s)",
+            "Pool house(s)",
+            "Prayer room(s)",
+            "Reception room(s)",
+            "Room(s)",
+            "Root cellar(s)",
+            "Sauna(s)",
+            "Shed(s)",
+            "Shop(s)",
+            "Shower room(s)",
+            "Shower room(s)/ Lavatory(ies)",
+            "Ski storage room(s)",
+            "Solarium(s)",
+            "Stair(s)",
+            "Stockroom(s)",
+            "Storage room(s)",
+            "Studio(s)",
+            "Study(ies)",
+            "Suite(s)",
+            "Terrace(s)",
+            "Unit(s)",
+            "Veranda(s)",
+            "Walk-in closet(s)",
+            "Warehouse(s)",
+            "Watchtower(s)",
+            "Workshop(s)",
+            "Exterior swimming pool(s)",
+            "Summer kitchen",
+            "Spa",
+            "Gallery",
+            "Boathouse",
+            "Dining room / kitchen",
+            "Equipped kitchen",
+            "Semi-equipped kitchen",
+            "Angle kitchen",
+            "Kitchenette",
+            "American kitchen",
+            "Parcel",
+            "Car shelter",
+            "Roof top terrace",
+            "Lower ground floor",
+            "Storehouse",
+            "Ski locker",
+            "Kitchen/living room",
+            "Open kitchen",
+            "Space type",
+            "Jacuzzi",
+            "Wine cellar",
+            "Outdoor room",
+            "Exterior",
+            "Surface type",
+            "Winter garden",
+            "Covered terrace",
+            "Covered balcony",
+            "Reducted balcony",
+            "Garden shed",
+            "Disponible",
+            "Combles",
+            "Galetas",
+            "Ground floor"
+          ]
+        },
+        "quantity": {
+          "type": "number",
+          "minimum": 0,
+          "description": "How many such spaces there are in the property."
+        },
+        "usableArea": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Usable area in m² per each space unit."
+        },
+        "habitableArea": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Habitable area in m² per each space unit."
+        },
+        "weighting": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Weighting of each space unit, m²."
+        },
+        "isHabitable": {
+          "$ref": "#/$defs/applicableType",
+          "description": "Space is habitable."
+        },
+        "surfacePPE": {
+          "type": "number",
+          "minimum": 0
+        },
+        "comment": {
+          "type": "array",
+          "description": "Sequence of language specific comments, related to the space.",
+          "items": {
+            "type": "object",
+            "description": "One for each language, a set of language specific comments, related to the space.",
+            "additionalProperties": false,
+            "properties": {
+              "languageCode": {
+                "$ref": "#/$defs/languageCodeType"
+              },
+              "text": {
+                "type": "string",
+                "description": "Comment text."
+              }
+            },
+            "required": ["languageCode", "text"]
+          }
+        }
+      },
+      "required": ["name", "quantity", "isHabitable"]
     }
   }
 }
