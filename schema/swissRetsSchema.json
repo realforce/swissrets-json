@@ -1591,6 +1591,10 @@
           "type": "string",
           "format": "date"
         },
+        "attachments": {
+          "$ref": "#/$defs/attachmentType",
+          "title": "ProjectAttachment"
+        },
         "units": {
           "type": "array",
           "description": "List of units.",
@@ -1917,7 +1921,7 @@
           "description": "Sequence of all language specific content and texts."
         },
         "isDirectTransaction": {
-          "type": "boolean",
+          "$ref": "#/$defs/applicableType",
           "description": "Whether the transaction is direct or via a broker"
         },
         "isSubjectToVat": {
@@ -1956,6 +1960,10 @@
               "description": "Size of land in m²"
             }
           }
+        },
+        "attachments": {
+          "$ref": "#/$defs/attachmentType",
+          "title": "PropertyAttachment"
         }
       },
       "required": ["id", "referenceId", "type", "availability", "localizations"]
@@ -2296,11 +2304,6 @@
         "floor": {
           "type": "integer",
           "description": "Floor number, ground floor is 0, basement floors are negative."
-        },
-        "floorLoad": {
-          "type": "number",
-          "minimum": 0,
-          "description": "Maximum floor load in kg/m²"
         },
         "grossPremium": {
           "type": "number",
@@ -4182,6 +4185,9 @@
         "amperes": {
           "type": "number",
           "minimum": 0
+        },
+        "isPrestige": {
+          "$ref": "#/$defs/applicableType"
         }
       }
     },
@@ -4603,82 +4609,8 @@
           "description": "Description of available and included equipment."
         },
         "attachments": {
-          "type": "object",
-          "additionalProperties": false,
-          "title": "PropertyAttachment",
-          "description": "Sequence links, files, embeds and media.",
-          "properties": {
-            "images": {
-              "type": "array",
-              "title": "Image",
-              "items": {
-                "$ref": "#/$defs/attachmentImageType"
-              }
-            },
-            "logos": {
-              "type": "array",
-              "title": "Logo",
-              "items": {
-                "$ref": "#/$defs/attachmentLogoType"
-              }
-            },
-            "documents": {
-              "type": "array",
-              "title": "Document",
-              "items": {
-                "$ref": "#/$defs/attachmentDocumentType",
-                "description": "Specifications, brochures and other descriptive files."
-              }
-            },
-            "plans": {
-              "type": "array",
-              "title": "Document",
-              "items": {
-                "$ref": "#/$defs/attachmentDocumentType",
-                "description": "Floorplan image or document."
-              }
-            },
-            "landRegisterExtracts": {
-              "type": "array",
-              "title": "Document",
-              "items": {
-                "$ref": "#/$defs/attachmentDocumentType",
-                "description": "A document given to political officials (commune) with basic information portraying the property and its registrational validity."
-              }
-            },
-            "directLinks": {
-              "type": "array",
-              "title": "Link",
-              "items": {
-                "$ref": "#/$defs/attachmentLinkType",
-                "description": "'direct-link' defines a link that will link visitors 'directly' to the offer. For example from a List of properties one will be linked to the project website directly if clicked. This is usually used by websites, and portals tend to ignore that and can opt into simply representing them as normal 'link' types."
-              }
-            },
-            "links": {
-              "type": "array",
-              "title": "Link",
-              "items": {
-                "$ref": "#/$defs/attachmentLinkType",
-                "description": "An arbitrary related link."
-              }
-            },
-            "virtualTourLinks": {
-              "type": "array",
-              "title": "Link",
-              "items": {
-                "$ref": "#/$defs/attachmentLinkType",
-                "description": "Virtual tour link, typically used for embeddings and integrations."
-              }
-            },
-            "youTubeLinks": {
-              "type": "array",
-              "title": "Link",
-              "items": {
-                "$ref": "#/$defs/attachmentLinkType",
-                "description": "Video link, typically used for embeddings and integrations."
-              }
-            }
-          }
+          "$ref": "#/$defs/attachmentType",
+          "title": "PropertyAttachment"
         },
         "visitInformation": {
           "type": "string",
@@ -4694,6 +4626,83 @@
         }
       },
       "required": ["title", "languageCode"]
+    },
+    "attachmentType": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Sequence of links, files, embeds and media.",
+      "properties": {
+        "images": {
+          "type": "array",
+          "title": "Image",
+          "items": {
+            "$ref": "#/$defs/attachmentImageType"
+          }
+        },
+        "logos": {
+          "type": "array",
+          "title": "Logo",
+          "items": {
+            "$ref": "#/$defs/attachmentLogoType"
+          }
+        },
+        "documents": {
+          "type": "array",
+          "title": "Document",
+          "items": {
+            "$ref": "#/$defs/attachmentDocumentType",
+            "description": "Specifications, brochures and other descriptive files."
+          }
+        },
+        "plans": {
+          "type": "array",
+          "title": "Document",
+          "items": {
+            "$ref": "#/$defs/attachmentDocumentType",
+            "description": "Floorplan image or document."
+          }
+        },
+        "landRegisterExtracts": {
+          "type": "array",
+          "title": "Document",
+          "items": {
+            "$ref": "#/$defs/attachmentDocumentType",
+            "description": "A document given to political officials (commune) with basic information portraying the property and its registrational validity."
+          }
+        },
+        "directLinks": {
+          "type": "array",
+          "title": "Link",
+          "items": {
+            "$ref": "#/$defs/attachmentLinkType",
+            "description": "'direct-link' defines a link that will link visitors 'directly' to the offer. For example from a List of properties one will be linked to the project website directly if clicked. This is usually used by websites, and portals tend to ignore that and can opt into simply representing them as normal 'link' types."
+          }
+        },
+        "links": {
+          "type": "array",
+          "title": "Link",
+          "items": {
+            "$ref": "#/$defs/attachmentLinkType",
+            "description": "An arbitrary related link."
+          }
+        },
+        "virtualTourLinks": {
+          "type": "array",
+          "title": "Link",
+          "items": {
+            "$ref": "#/$defs/attachmentLinkType",
+            "description": "Virtual tour link, typically used for embeddings and integrations."
+          }
+        },
+        "youTubeLinks": {
+          "type": "array",
+          "title": "Link",
+          "items": {
+            "$ref": "#/$defs/attachmentLinkType",
+            "description": "Video link, typically used for embeddings and integrations."
+          }
+        }
+      }
     },
     "attachmentEventType": {
       "type": "object",
@@ -4752,6 +4761,7 @@
           "type": "string",
           "title": "AdditionalOfferType",
           "enum": [
+            "parking",
             "parking-exterior-space",
             "parking-carport",
             "parking-garage",

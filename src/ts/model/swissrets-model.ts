@@ -26,7 +26,8 @@ export  interface  Project {
     /**
      * Location of the property.
      */
-    address?: Address;
+    address?:     Address;
+    attachments?: ProAttachment;
     /**
      * Mutually exclusive lifecycle state.
      */
@@ -95,6 +96,74 @@ export  interface  Geo {
     elevation?: number;
     latitude:   number;
     longitude:  number;
+}
+
+/**
+ * Sequence of links, files, embeds and media.
+ */
+export  interface  ProAttachment {
+    directLinks?:          Link[];
+    documents?:            Document[];
+    images?:               Image[];
+    landRegisterExtracts?: Document[];
+    links?:                Link[];
+    logos?:                Logo[];
+    plans?:                Document[];
+    virtualTourLinks?:     Link[];
+    youTubeLinks?:         Link[];
+}
+
+/**
+ * 'direct-link' defines a link that will link visitors 'directly' to the offer. For example
+ * from a List of properties one will be linked to the project website directly if clicked.
+ * This is usually used by websites, and portals tend to ignore that and can opt into simply
+ * representing them as normal 'link' types.
+ *
+ * Localized link attachment for properties.
+ *
+ * An arbitrary related link.
+ *
+ * Virtual tour link, typically used for embeddings and integrations.
+ *
+ * Video link, typically used for embeddings and integrations.
+ */
+export  interface  Link {
+    title?: string;
+    url:    string;
+}
+
+/**
+ * Specifications, brochures and other descriptive files.
+ *
+ * Generic non-specific document.
+ *
+ * A document given to political officials (commune) with basic information portraying the
+ * property and its registrational validity.
+ *
+ * Floorplan image or document.
+ */
+export  interface  Document {
+    mimeType?: string;
+    title?:    string;
+    url:       string;
+}
+
+/**
+ * Picture from inside or outside, typically used in image galleries.
+ */
+export  interface  Image {
+    description?: string;
+    mimeType?:    string;
+    title?:       string;
+    url:          string;
+}
+
+/**
+ * Related logo image.
+ */
+export  interface  Logo {
+    mimeType?: string;
+    url:       string;
 }
 
 /**
@@ -661,6 +730,8 @@ export  interface  ProjectCharacteristics {
  *
  * Space is habitable.
  *
+ * Whether the transaction is direct or via a broker
+ *
  * Property is subject to VAT.
  *
  * Defines if additional charges are included into the main rent/buy price.
@@ -713,16 +784,6 @@ export  interface  Developer {
 }
 
 /**
- * Picture from inside or outside, typically used in image galleries.
- */
-export  interface  Image {
-    description?: string;
-    mimeType?:    string;
-    title?:       string;
-    url:          string;
-}
-
-/**
  * Sellers URL, typically the company website.
  */
 export  interface  Website {
@@ -767,49 +828,6 @@ export  interface  ProjectAttachment {
     plans?:                Document[];
     virtualTourLinks?:     Link[];
     youTubeLinks?:         Link[];
-}
-
-/**
- * 'direct-link' defines a link that will link visitors 'directly' to the offer. For example
- * from a List of properties one will be linked to the project website directly if clicked.
- * This is usually used by websites, and portals tend to ignore that and can opt into simply
- * representing them as normal 'link' types.
- *
- * Localized link attachment for properties.
- *
- * An arbitrary related link.
- *
- * Virtual tour link, typically used for embeddings and integrations.
- *
- * Video link, typically used for embeddings and integrations.
- */
-export  interface  Link {
-    title?: string;
-    url:    string;
-}
-
-/**
- * Specifications, brochures and other descriptive files.
- *
- * Generic non-specific document.
- *
- * A document given to political officials (commune) with basic information portraying the
- * property and its registrational validity.
- *
- * Floorplan image or document.
- */
-export  interface  Document {
-    mimeType?: string;
-    title?:    string;
-    url:       string;
-}
-
-/**
- * Related logo image.
- */
-export  interface  Logo {
-    mimeType?: string;
-    url:       string;
 }
 
 /**
@@ -936,7 +954,8 @@ export  interface  Property {
     /**
      * Location of the property.
      */
-    address?: Address;
+    address?:     Address;
+    attachments?: ProAttachment;
     /**
      * The name or username of the author, who created the record.
      */
@@ -987,7 +1006,7 @@ export  interface  Property {
     /**
      * Whether the transaction is direct or via a broker
      */
-    isDirectTransaction?: boolean;
+    isDirectTransaction?: ApplicableType;
     /**
      * Property is subject to VAT.
      */
@@ -1394,11 +1413,7 @@ export  interface  PropertyCharacteristics {
     /**
      * Floor number, ground floor is 0, basement floors are negative.
      */
-    floor?: number;
-    /**
-     * Maximum floor load in kg/m²
-     */
-    floorLoad?:          number;
+    floor?:              number;
     florist?:            string;
     flyboard?:           string;
     foodservice?:        string;
@@ -1857,6 +1872,7 @@ export  interface  PropertyCharacteristics {
      * Refers to the construction method used until 60-80 years ago.
      */
     isOldBuilding?: ApplicableType;
+    isPrestige?:    ApplicableType;
     /**
      * Planned for the future.
      */
@@ -2444,10 +2460,7 @@ export enum HeatingGenerationType {
  * One for each language, a set of language specific content and texts.
  */
 export  interface  PropertyLocalization {
-    /**
-     * Sequence links, files, embeds and media.
-     */
-    attachments?: PropertyAttachment;
+    attachments?: ProAttachment;
     /**
      * Main description.
      */
@@ -2478,21 +2491,6 @@ export  interface  PropertyLocalization {
      * similar.
      */
     visitInformation?: string;
-}
-
-/**
- * Sequence links, files, embeds and media.
- */
-export  interface  PropertyAttachment {
-    directLinks?:          Link[];
-    documents?:            Document[];
-    images?:               Image[];
-    landRegisterExtracts?: Document[];
-    links?:                Link[];
-    logos?:                Logo[];
-    plans?:                Document[];
-    virtualTourLinks?:     Link[];
-    youTubeLinks?:         Link[];
 }
 
 export  interface  Event {
@@ -2594,6 +2592,7 @@ export  interface  AdditionalOffer {
 }
 
 export enum AdditionalOfferType {
+    Parking = "parking",
     ParkingCarport = "parking-carport",
     ParkingDoubleGarage = "parking-double-garage",
     ParkingDuplex = "parking-duplex",
