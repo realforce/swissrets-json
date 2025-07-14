@@ -215,7 +215,7 @@ export  interface  ProjectCharacteristics {
     canoe?:                         string;
     caretakerHouse?:                string;
     caterer?:                       string;
-    cDPlayer?:                      string;
+    cdPlayer?:                      string;
     cheesemonger?:                  string;
     chemist?:                       string;
     clothes?:                       string;
@@ -447,7 +447,7 @@ export  interface  ProjectCharacteristics {
     highPower?:                     string;
     hob?:                           string;
     homeCinema?:                    string;
-    "hospital/clinic"?:             string;
+    hospitalOrClinic?:              string;
     hotel?:                         string;
     hotWater?:                      string;
     householdElectrical?:           string;
@@ -538,13 +538,13 @@ export  interface  ProjectCharacteristics {
     taxi?:                          string;
     teaRoom?:                       string;
     television?:                    string;
-    tGVStation?:                    string;
+    tgvStation?:                    string;
     theater?:                       string;
     tobacconist?:                   string;
     toilet?:                        string;
     tram?:                          string;
     travelAgency?:                  string;
-    tVDistribution?:                string;
+    tvDistribution?:                string;
     university?:                    string;
     vegetableFiber?:                string;
     veranda?:                       ApplicableType;
@@ -1045,8 +1045,8 @@ export  interface  Property {
      */
     type: OfferType;
     /**
-     * Reference to an existing project - unit within the xml. Used for grouping and
-     * representing a 'project-tree'
+     * Reference to an existing project - unit. Used for grouping and representing a
+     * 'project-tree'
      */
     unitReferenceId?: string;
     /**
@@ -1350,8 +1350,13 @@ export  interface  PropertyCharacteristics {
     camping?:           string;
     canoe?:             string;
     caretakerHouse?:    string;
-    caterer?:           string;
-    cDPlayer?:          string;
+    /**
+     * A covered structure used to offer limited protection from rain and snow, custom
+     * description.
+     */
+    carPort?:  string;
+    caterer?:  string;
+    cdPlayer?: string;
     /**
      * Height of the rooms in m.
      */
@@ -1386,7 +1391,7 @@ export  interface  PropertyCharacteristics {
     doubleFlowVentilation?: string;
     droppedCeiling?:        string;
     drugstore?:             string;
-    dVDPlayer?:             string;
+    dvdPlayer?:             string;
     electricAwnings?:       string;
     electricGate?:          string;
     electricShutters?:      string;
@@ -1434,9 +1439,13 @@ export  interface  PropertyCharacteristics {
      * discounts have been deducted, in percent.
      */
     grossPremium?: number;
-    haberdasher?:  string;
-    hairdresser?:  string;
-    hairDryer?:    string;
+    /**
+     * Load-bearing capacity of the ground or floor, kg/m².
+     */
+    groundLoad?:  number;
+    haberdasher?: string;
+    hairdresser?: string;
+    hairDryer?:   string;
     /**
      * Hall height in m, usually for commercial properties.
      */
@@ -1532,7 +1541,7 @@ export  interface  PropertyCharacteristics {
     hasDemolitionProperty?: ApplicableType;
     hasDigicode?:           ApplicableType;
     hasDiningRoom?:         ApplicableType;
-    hasDiscothèque?:        ApplicableType;
+    hasDiscotheque?:        ApplicableType;
     /**
      * Availability of a dishwasher.
      */
@@ -1880,7 +1889,8 @@ export  interface  PropertyCharacteristics {
     /**
      * Part of a quiet surrounding or neighbourhood.
      */
-    isQuiet?: ApplicableType;
+    isQuiet?:              ApplicableType;
+    isReceptionNoctidial?: ApplicableType;
     /**
      * Fully renovated, neat, clean and restored.
      */
@@ -2010,7 +2020,6 @@ export  interface  PropertyCharacteristics {
     publicParking?:   string;
     publicPool?:      string;
     realEstateAgent?: string;
-    "reception24/7"?: string;
     recreation?:      string;
     refrigerator?:    string;
     rJ45Cable?:       string;
@@ -2038,13 +2047,13 @@ export  interface  PropertyCharacteristics {
     taxi?:            string;
     teaRoom?:         string;
     television?:      string;
-    tGVStation?:      string;
+    tgvStation?:      string;
     theater?:         string;
     tobacconist?:     string;
     toilet?:          string;
     tram?:            string;
     travelAgency?:    string;
-    tVDistribution?:  string;
+    tvDistribution?:  string;
     university?:      string;
     /**
      * Plot area built on, the ratio between plot area and gross floor area.
@@ -2672,10 +2681,10 @@ export  interface  Extra {
     /**
      * Current income for the property in rent.
      */
-    currentIncome?:   PropertyPriceRent;
-    renovationFound?: number;
-    stockInTrade?:    number;
-    tax?:             number;
+    currentIncome?:  PropertyPriceRent;
+    renovationFund?: number;
+    stockInTrade?:   number;
+    tax?:            number;
     /**
      * The tax rate of the property, %.
      */

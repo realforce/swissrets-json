@@ -339,7 +339,7 @@
             "butcher": {
               "type": "string"
             },
-            "cDPlayer": {
+            "cdPlayer": {
               "type": "string"
             },
             "hasCabin": {
@@ -776,7 +776,7 @@
             "homeCinema": {
               "type": "string"
             },
-            "hospital/clinic": {
+            "hospitalOrClinic": {
               "type": "string"
             },
             "hotWater": {
@@ -1298,10 +1298,10 @@
             "synagogue": {
               "type": "string"
             },
-            "tGVStation": {
+            "tgvStation": {
               "type": "string"
             },
-            "tVDistribution": {
+            "tvDistribution": {
               "type": "string"
             },
             "tableware": {
@@ -1665,7 +1665,7 @@
         "unitReferenceId": {
           "type": "string",
           "sameAs": true,
-          "description": "Reference to an existing project - unit within the xml. Used for grouping and representing a 'project-tree'"
+          "description": "Reference to an existing project - unit. Used for grouping and representing a 'project-tree'"
         },
         "visualReferenceId": {
           "type": "string",
@@ -2346,6 +2346,11 @@
           "title": "applicableType",
           "$ref": "#/$defs/applicableType"
         },
+        "carPort": {
+          "description": "A covered structure used to offer limited protection from rain and snow, custom description.",
+          "title": "Car Port",
+          "type": "string"
+        },
         "hasCellar": {
           "description": "Availability of a cellar.",
           "title": "applicableType",
@@ -2923,7 +2928,7 @@
         "butcher": {
           "type": "string"
         },
-        "cDPlayer": {
+        "cdPlayer": {
           "type": "string"
         },
         "hasCabin": {
@@ -3108,7 +3113,7 @@
           "$ref": "#/$defs/applicableType",
           "title": "applicableType"
         },
-        "dVDPlayer": {
+        "dvdPlayer": {
           "type": "string"
         },
         "dayCare": {
@@ -3128,7 +3133,7 @@
           "$ref": "#/$defs/applicableType",
           "title": "applicableType"
         },
-        "hasDiscothèque": {
+        "hasDiscotheque": {
           "$ref": "#/$defs/applicableType",
           "title": "applicableType"
         },
@@ -3707,8 +3712,9 @@
           "$ref": "#/$defs/applicableType",
           "title": "applicableType"
         },
-        "reception24/7": {
-          "type": "string"
+        "isReceptionNoctidial": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
         },
         "hasReceptionRoom": {
           "$ref": "#/$defs/applicableType",
@@ -3889,10 +3895,10 @@
         "synagogue": {
           "type": "string"
         },
-        "tGVStation": {
+        "tgvStation": {
           "type": "string"
         },
-        "tVDistribution": {
+        "tvDistribution": {
           "type": "string"
         },
         "tableware": {
@@ -4188,6 +4194,11 @@
         },
         "isPrestige": {
           "$ref": "#/$defs/applicableType"
+        },
+        "groundLoad": {
+          "type": "number",
+          "format": "float",
+          "description": "Load-bearing capacity of the ground or floor, kg/m²."
         }
       }
     },
@@ -4385,7 +4396,7 @@
               "description": "The tax rate of the property, %.",
               "minimum": 0
             },
-            "renovationFound": {
+            "renovationFund": {
               "type": "number",
               "minimum": 0
             },
