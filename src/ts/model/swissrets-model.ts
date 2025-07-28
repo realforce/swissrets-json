@@ -71,6 +71,7 @@ export  interface  Project {
  * Postal address.
  */
 export  interface  Address {
+    canton?: string;
     /**
      * Uppercase two letter country code.
      */
@@ -82,6 +83,7 @@ export  interface  Address {
     locality?:            string;
     postalCode?:          string;
     postOfficeBoxNumber?: string;
+    quarter?:             string;
     region?:              string;
     street?:              string;
     streetAddition?:      string;
@@ -773,14 +775,20 @@ export  interface  Developer {
     /**
      * This field is depricated and will be removed in a future major version!
      */
-    emailRem?:     string;
-    id?:           string;
-    languageCode?: string;
-    legalName?:    string;
-    logo?:         Image;
-    mobile?:       string;
-    phone?:        string;
-    website?:      Website;
+    emailRem?:      string;
+    id?:            string;
+    languageCode?:  string;
+    legalName?:     string;
+    logo?:          Image;
+    mobile?:        string;
+    phone?:         string;
+    socialNetwork?: SocialNetworkElement[];
+    website?:       Website;
+}
+
+export  interface  SocialNetworkElement {
+    name?: string;
+    url:   string;
 }
 
 /**
@@ -909,14 +917,17 @@ export  interface  ProjectSeller {
  * Person responsible opening the door for visiting.
  */
 export  interface  Person {
-    email?:      string;
-    familyName?: string;
-    function?:   string;
-    gender?:     string;
-    givenName?:  string;
-    mobile?:     string;
-    note?:       string;
-    phone?:      string;
+    address?:           Address;
+    avatar?:            Image;
+    email?:             string;
+    familyName?:        string;
+    function?:          string;
+    gender?:            string;
+    givenName?:         string;
+    mobile?:            string;
+    note?:              string;
+    phone?:             string;
+    preferredLanguage?: string;
 }
 
 /**
@@ -1829,8 +1840,11 @@ export  interface  PropertyCharacteristics {
     /**
      * Old and in poor condition, in a state of decay.
      */
-    isDilapidated?: ApplicableType;
-    isDowntown?:    ApplicableType;
+    isDilapidated?:             ApplicableType;
+    isDowntown?:                ApplicableType;
+    isEnvironmentCountryside?:  ApplicableType;
+    isEnvironmentMountainside?: ApplicableType;
+    isEnvironmentUrban?:        ApplicableType;
     /**
      * No one used the flat or the building before, since it was built or heavily renovated from
      * ground up.
@@ -1998,7 +2012,10 @@ export  interface  PropertyCharacteristics {
     onHillsideSouth?: ApplicableType;
     onMainRoad?:      string;
     optician?:        string;
-    orientation?:     Orientation;
+    /**
+     * Which orientation(s) the property has.
+     */
+    orientation?:     Orientation[];
     outsideCamera?:   string;
     oven?:            string;
     paddle?:          string;
@@ -2242,7 +2259,7 @@ export  interface  Dimensions {
      * Size of land in m²
      */
     land?:         number;
-    spaces?:       SwissRetsSchemaJson[];
+    spaces?:       SpaceElement[];
     surfacePPE?:   number;
     usableArea?:   number;
     weightedArea?: number;
@@ -2251,7 +2268,7 @@ export  interface  Dimensions {
 /**
  * Property space
  */
-export  interface  SwissRetsSchemaJson {
+export  interface  SpaceElement {
     /**
      * Sequence of language specific comments, related to the space.
      */

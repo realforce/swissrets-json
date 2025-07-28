@@ -4105,17 +4105,21 @@
           ]
         },
         "orientation": {
-          "type": "string",
-          "enum": [
-            "east",
-            "north",
-            "south",
-            "west",
-            "north-east",
-            "north-west",
-            "south-east",
-            "south-west"
-          ]
+          "type": "array",
+          "description": "Which orientation(s) the property has.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "east",
+              "north",
+              "south",
+              "west",
+              "north-east",
+              "north-west",
+              "south-east",
+              "south-west"
+            ]
+          }
         },
         "view": {
           "type": "array",
@@ -4199,6 +4203,15 @@
           "type": "number",
           "format": "float",
           "description": "Load-bearing capacity of the ground or floor, kg/m²."
+        },
+        "isEnvironmentUrban": {
+          "$ref": "#/$defs/applicableType"
+        },
+        "isEnvironmentCountryside": {
+          "$ref": "#/$defs/applicableType"
+        },
+        "isEnvironmentMountainside": {
+          "$ref": "#/$defs/applicableType"
         }
       }
     },
@@ -4212,10 +4225,16 @@
           "type": "string",
           "pattern": "[A-Z]{2}"
         },
+        "canton": {
+          "type": "string"
+        },
         "locality": {
           "type": "string"
         },
         "region": {
+          "type": "string"
+        },
+        "quarter": {
           "type": "string"
         },
         "postalCode": {
@@ -4475,6 +4494,12 @@
         },
         "logo": {
           "$ref": "#/$defs/attachmentImageType"
+        },
+        "socialNetwork": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/socialNetworkType"
+          }
         }
       }
     },
@@ -4506,8 +4531,30 @@
         },
         "note": {
           "type": "string"
+        },
+        "avatar": {
+          "$ref": "#/$defs/attachmentImageType"
+        },
+        "preferredLanguage": {
+          "$ref": "#/$defs/languageCodeType"
+        },
+        "address": {
+          "$ref": "#/$defs/addressType"
         }
       }
+    },
+    "socialNetworkType": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": ["url"]
     },
     "applicableType": {
       "title": "ApplicableType",
