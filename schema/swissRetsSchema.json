@@ -61,7 +61,7 @@
           "properties": {
             "organization": {
               "$ref": "#/$defs/organizationType",
-              "description": "The company selling"
+              "description": "The company selling."
             },
             "contactPerson": {
               "$ref": "#/$defs/personType",
@@ -73,6 +73,10 @@
               "$ref": "#/$defs/emailType"
             }
           }
+        },
+        "developer": {
+          "$ref": "#/$defs/organizationType",
+          "description": "The developer of the project."
         },
         "availability": {
           "type": "object",
@@ -187,6 +191,14 @@
               "type": "number",
               "minimum": 0
             },
+            "numberOfBedroomsFrom": {
+              "type": "number",
+              "minimum": 0
+            },
+            "numberOfBedroomsTo": {
+              "type": "number",
+              "minimum": 0
+            },
             "numberOfResidentialUnits": {
               "type": "number",
               "minimum": 0
@@ -194,6 +206,1279 @@
             "numberOfCommercialUnits": {
               "type": "number",
               "minimum": 0
+            },
+            "agriculture": {
+              "type": "string"
+            },
+            "hasAirConditioning": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "airFiltrationSystem": {
+              "type": "string"
+            },
+            "hasAlarm": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "amphibiousCar": {
+              "type": "string"
+            },
+            "hasAntiTheftAlarm": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasApartment": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasAtomicShelter": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasAtticRoom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasAutomaticWateringSystem": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "automation": {
+              "type": "string"
+            },
+            "hasBabyBed": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "backupWaterSystem": {
+              "type": "string"
+            },
+            "bakery": {
+              "type": "string"
+            },
+            "hasBank": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "bar": {
+              "type": "string"
+            },
+            "barbecue": {
+              "type": "string"
+            },
+            "hasBarn": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasBasement": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasBathroom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasBathroomLavatory": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasBathtub": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasBeachAccess": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "beachGames": {
+              "type": "string"
+            },
+            "hasBicyclePath": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasBikeStorage": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "bikes": {
+              "type": "string"
+            },
+            "hasBinStorageArea": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "bookshop": {
+              "type": "string"
+            },
+            "bowlingGreen": {
+              "type": "string"
+            },
+            "brewery": {
+              "type": "string"
+            },
+            "isBright": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "isBuildingLand": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "busHub": {
+              "type": "string"
+            },
+            "hasBusStop": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "businessCenter": {
+              "type": "string"
+            },
+            "butcher": {
+              "type": "string"
+            },
+            "cdPlayer": {
+              "type": "string"
+            },
+            "hasCabin": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasCafeteria": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "café": {
+              "type": "string"
+            },
+            "hasCamera": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "camping": {
+              "type": "string"
+            },
+            "canoe": {
+              "type": "string"
+            },
+            "caretakerHouse": {
+              "type": "string"
+            },
+            "hasCarnotzet": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasCarpeting": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasCarriageHouse": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "caterer": {
+              "type": "string"
+            },
+            "hasCentralVacuumCleaner": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasCentralisedAirConditioning": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasCentralisedVentilation": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasCeramicStove": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "cheesemonger": {
+              "type": "string"
+            },
+            "chemist": {
+              "type": "string"
+            },
+            "hasChildCareCentre": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasChimney": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasChimneyFlue": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasCinema": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasCinemaRoom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasCloset": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "clothes": {
+              "type": "string"
+            },
+            "hasClothesDryer": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "coat": {
+              "type": "string"
+            },
+            "hasCobblestone": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "coffeemaker": {
+              "type": "string"
+            },
+            "coldWater": {
+              "type": "string"
+            },
+            "commercialServices": {
+              "type": "string"
+            },
+            "commissary": {
+              "type": "string"
+            },
+            "hasCommunalPool": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasCommunityLaundryRoom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "computer": {
+              "type": "string"
+            },
+            "computerNetwork": {
+              "type": "string"
+            },
+            "hasConcierge": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasConcrete": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "condominiumGarden": {
+              "type": "string"
+            },
+            "confectioner": {
+              "type": "string"
+            },
+            "connectedThermostat": {
+              "type": "string"
+            },
+            "connection": {
+              "type": "string"
+            },
+            "conventionCenter": {
+              "type": "string"
+            },
+            "hasCorridor": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "cosmetician": {
+              "type": "string"
+            },
+            "hasCourtyard": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasCoveredTerrace": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "crawlSpace": {
+              "type": "string"
+            },
+            "hasCrossCountrySkiTrail": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "culture": {
+              "type": "string"
+            },
+            "hasCupboard": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasCustoms": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "dVDPlayer": {
+              "type": "string"
+            },
+            "dayCare": {
+              "type": "string"
+            },
+            "decoration": {
+              "type": "string"
+            },
+            "defibrillator": {
+              "type": "string"
+            },
+            "hasDigicode": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasDiningRoom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasDiscothèque": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "diving": {
+              "type": "string"
+            },
+            "doctor": {
+              "type": "string"
+            },
+            "doubleFlowVentilation": {
+              "type": "string"
+            },
+            "hasDoublePanedWindows": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasDoubleReceptionRoom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "isDowntown": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasDressingRoom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "droppedCeiling": {
+              "type": "string"
+            },
+            "drugstore": {
+              "type": "string"
+            },
+            "electricAwnings": {
+              "type": "string"
+            },
+            "electricGate": {
+              "type": "string"
+            },
+            "hasElectricParking": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "electricShutters": {
+              "type": "string"
+            },
+            "engineGenerator": {
+              "type": "string"
+            },
+            "hasEntrance": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasEquippedKitchen": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasExteriorLandscaping": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "fabric": {
+              "type": "string"
+            },
+            "hasFax": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasFence": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "fireAlarmSystem": {
+              "type": "string"
+            },
+            "fireHoseCabinets": {
+              "type": "string"
+            },
+            "fireSprinklerSystem": {
+              "type": "string"
+            },
+            "fishing": {
+              "type": "string"
+            },
+            "fishmongers": {
+              "type": "string"
+            },
+            "hasFitnessRoom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "floatingPool": {
+              "type": "string"
+            },
+            "hasFloorHeating": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "florist": {
+              "type": "string"
+            },
+            "flyboard": {
+              "type": "string"
+            },
+            "foodservice": {
+              "type": "string"
+            },
+            "freezer": {
+              "type": "string"
+            },
+            "fruitAndVegetables": {
+              "type": "string"
+            },
+            "funeral": {
+              "type": "string"
+            },
+            "hasFunicular": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "isFurnished": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "furnitureStore": {
+              "type": "string"
+            },
+            "galetas": {
+              "type": "string"
+            },
+            "gallery": {
+              "type": "string"
+            },
+            "hasGarden": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasGardenBench": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "gardenCentre": {
+              "type": "string"
+            },
+            "hasGardenShelter": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasGardian": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "gas": {
+              "type": "string"
+            },
+            "gasStation": {
+              "type": "string"
+            },
+            "hasGatedEntrance": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasGolf": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasGolfCourse": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasGranite": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasGravel": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasGreenLandscape": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasGreenery": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "grocer": {
+              "type": "string"
+            },
+            "grocery": {
+              "type": "string"
+            },
+            "groomer": {
+              "type": "string"
+            },
+            "haberdasher": {
+              "type": "string"
+            },
+            "hairDryer": {
+              "type": "string"
+            },
+            "hairdresser": {
+              "type": "string"
+            },
+            "hasHallway": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasHammam": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasHandicapAccess": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hardwareShop": {
+              "type": "string"
+            },
+            "helipad": {
+              "type": "string"
+            },
+            "highPower": {
+              "type": "string"
+            },
+            "hob": {
+              "type": "string"
+            },
+            "homeCinema": {
+              "type": "string"
+            },
+            "hospitalOrClinic": {
+              "type": "string"
+            },
+            "hotWater": {
+              "type": "string"
+            },
+            "hotel": {
+              "type": "string"
+            },
+            "householdElectrical": {
+              "type": "string"
+            },
+            "hoverboard": {
+              "type": "string"
+            },
+            "hovercraft": {
+              "type": "string"
+            },
+            "hydraulicPlatform": {
+              "type": "string"
+            },
+            "hasIndoorCarPark": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasIndoorGarage": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "inflationStation": {
+              "type": "string"
+            },
+            "insurer": {
+              "type": "string"
+            },
+            "hasIntercomSystem": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "interfacing": {
+              "type": "string"
+            },
+            "intermediateFloor": {
+              "type": "string"
+            },
+            "internet": {
+              "type": "string"
+            },
+            "hasInternetConnection": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "iron": {
+              "type": "string"
+            },
+            "irrigationSprinkler": {
+              "type": "string"
+            },
+            "hasJacuzzi": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "jetSki": {
+              "type": "string"
+            },
+            "jeweller": {
+              "type": "string"
+            },
+            "hasKitchenCorner": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "kiteSurf": {
+              "type": "string"
+            },
+            "hasLake": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasLaminate": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasLanding": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "laundry": {
+              "type": "string"
+            },
+            "hasLibrary": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "lift": {
+              "type": "string"
+            },
+            "hasLinenRoom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "linens": {
+              "type": "string"
+            },
+            "linoleum": {
+              "type": "string"
+            },
+            "hasLivingRoom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "locksmith": {
+              "type": "string"
+            },
+            "hasMaidsRoom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasMaidsStudio": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasMaintenanceRoom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasMarble": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasMarina": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasMasterBedroom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasMeetingRoom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "metalShutters": {
+              "type": "string"
+            },
+            "metro": {
+              "type": "string"
+            },
+            "hasMezzanine": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasMicrowaveOven": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasMooringSpace": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasMosquitoNet": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "motorizedFlysheet": {
+              "type": "string"
+            },
+            "hasMotorwayEntranceExit": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasMuseum": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "isNearAirport": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "isNearPublicTransportation": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "nightclub": {
+              "type": "string"
+            },
+            "nonFlooding": {
+              "type": "string"
+            },
+            "officeSupplies": {
+              "type": "string"
+            },
+            "offices": {
+              "type": "string"
+            },
+            "onMainRoad": {
+              "type": "string"
+            },
+            "optician": {
+              "type": "string"
+            },
+            "hasOutbuilding": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasOutdoorCarPark": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasOutdoorGarage": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasOutdoorLighting": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "outsideCamera": {
+              "type": "string"
+            },
+            "oven": {
+              "type": "string"
+            },
+            "paddle": {
+              "type": "string"
+            },
+            "painting": {
+              "type": "string"
+            },
+            "panel": {
+              "type": "string"
+            },
+            "parentalSuite": {
+              "type": "string"
+            },
+            "parging": {
+              "type": "string"
+            },
+            "hasPark": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasParquet": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasPatio": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "perfumery": {
+              "type": "string"
+            },
+            "pergola": {
+              "type": "string"
+            },
+            "petStore": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "photo": {
+              "type": "string"
+            },
+            "hasPhotovoltaicPanels": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "placeOfWorship": {
+              "type": "string"
+            },
+            "hasPlayRoom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasPond": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasPoolHouse": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "porkButcher": {
+              "type": "string"
+            },
+            "hasPort": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasPostOffice": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasPrayerRoom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "press": {
+              "type": "string"
+            },
+            "pressing": {
+              "type": "string"
+            },
+            "pressurizedAir": {
+              "type": "string"
+            },
+            "hasPrimarySchool": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasPrivateDock": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasPrivateLaundryRoom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "publicParking": {
+              "type": "string"
+            },
+            "publicPool": {
+              "type": "string"
+            },
+            "rJ45Cable": {
+              "type": "string"
+            },
+            "hasRadiatorHeating": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "realEstateAgent": {
+              "type": "string"
+            },
+            "hasReception": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "reception24/7": {
+              "type": "string"
+            },
+            "hasReceptionRoom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "recreation": {
+              "type": "string"
+            },
+            "refrigerator": {
+              "type": "string"
+            },
+            "hasRestaurants": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasRooftopTerrace": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasRootCellar": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "rubber": {
+              "type": "string"
+            },
+            "safe": {
+              "type": "string"
+            },
+            "hasSatellite": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasSauna": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasSchools": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "scooter": {
+              "type": "string"
+            },
+            "hasSea": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "seabob": {
+              "type": "string"
+            },
+            "hasSecomat": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasSecondarySchool": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "securityDoor": {
+              "type": "string"
+            },
+            "segway": {
+              "type": "string"
+            },
+            "selfEmployed": {
+              "type": "string"
+            },
+            "sexShop": {
+              "type": "string"
+            },
+            "shoes": {
+              "type": "string"
+            },
+            "shoppingCentre": {
+              "type": "string"
+            },
+            "shops": {
+              "type": "string"
+            },
+            "hasShower": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasShowerRoom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasShowerRoomOrLavatory": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "isSilent": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasSimplePanedWindows": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasSkiStorage": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasSkiTrail": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasSlate": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "slidingWindows": {
+              "type": "string"
+            },
+            "snack": {
+              "type": "string"
+            },
+            "solarArray": {
+              "type": "string"
+            },
+            "hasSolarium": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "spa": {
+              "type": "string"
+            },
+            "hasSportsCentre": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "spring": {
+              "type": "string"
+            },
+            "station": {
+              "type": "string"
+            },
+            "hasSteamOven": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasStockroom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasStone": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasStorageRoom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasStove": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasStudy": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasSuite": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "supermarket": {
+              "type": "string"
+            },
+            "hasSwedishStove": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasSwedishStovePipes": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "synagogue": {
+              "type": "string"
+            },
+            "tgvStation": {
+              "type": "string"
+            },
+            "tvDistribution": {
+              "type": "string"
+            },
+            "tableware": {
+              "type": "string"
+            },
+            "hasTar": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "taxi": {
+              "type": "string"
+            },
+            "teaRoom": {
+              "type": "string"
+            },
+            "hasTelephone": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "television": {
+              "type": "string"
+            },
+            "hasTennisCourt": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasTerrace": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "theater": {
+              "type": "string"
+            },
+            "hasTile": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasTiles": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "tobacconist": {
+              "type": "string"
+            },
+            "toilet": {
+              "type": "string"
+            },
+            "hasTrainStation": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "tram": {
+              "type": "string"
+            },
+            "travelAgency": {
+              "type": "string"
+            },
+            "hasTriplePanedWindows": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasTripleReceptionRoom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "university": {
+              "type": "string"
+            },
+            "vegetableFiber": {
+              "type": "string"
+            },
+            "veranda": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "videoArcade": {
+              "type": "string"
+            },
+            "videoGame": {
+              "type": "string"
+            },
+            "videoSecurity": {
+              "type": "string"
+            },
+            "hasVideophone": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasVillaArea": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasVillage": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasVineyards": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "vinyl": {
+              "type": "string"
+            },
+            "hasVisitorCarPark": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasVisitorsToilet": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "wakeboard": {
+              "type": "string"
+            },
+            "wallCloset": {
+              "type": "string"
+            },
+            "wallpaper": {
+              "type": "string"
+            },
+            "hasWatchtower": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "waterFiltrationSystem": {
+              "type": "string"
+            },
+            "waterSlide": {
+              "type": "string"
+            },
+            "hasWaterSoftner": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "waterSupply": {
+              "type": "string"
+            },
+            "hasWaterfront": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "waterpark": {
+              "type": "string"
+            },
+            "well": {
+              "type": "string"
+            },
+            "wellDrilling": {
+              "type": "string"
+            },
+            "wharf": {
+              "type": "string"
+            },
+            "whirlpoolTub": {
+              "type": "string"
+            },
+            "windowShade": {
+              "type": "string"
+            },
+            "hasWineCellar": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasWinterGarden": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "wiringCloset": {
+              "type": "string"
+            },
+            "hasWorkroom": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
+            },
+            "hasWorkshop": {
+              "$ref": "#/$defs/applicableType",
+              "title": "applicableType"
             }
           }
         },
@@ -302,6 +1587,14 @@
             "required": ["title", "languageCode"]
           }
         },
+        "constructionDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "attachments": {
+          "$ref": "#/$defs/attachmentType",
+          "title": "ProjectAttachment"
+        },
         "units": {
           "type": "array",
           "description": "List of units.",
@@ -372,7 +1665,7 @@
         "unitReferenceId": {
           "type": "string",
           "sameAs": true,
-          "description": "Reference to an existing project - unit within the xml. Used for grouping and representing a 'project-tree'"
+          "description": "Reference to an existing project - unit. Used for grouping and representing a 'project-tree'"
         },
         "visualReferenceId": {
           "type": "string",
@@ -597,7 +1890,7 @@
           "additionalProperties": false,
           "properties": {
             "inquiryEmail": {
-              "title": "The emailaddress dedicated for receiving inquiries and applications. This email address should not be presented publicly and is only intended as an indirect recipient using an online form or similar.",
+              "title": "The email address dedicated for receiving inquiries and applications. This email address should not be presented publicly and is only intended as an indirect recipient using an online form or similar.",
               "$ref": "#/$defs/emailType"
             },
             "organization": {
@@ -626,6 +1919,51 @@
             "$ref": "#/$defs/localizationType"
           },
           "description": "Sequence of all language specific content and texts."
+        },
+        "isDirectTransaction": {
+          "$ref": "#/$defs/applicableType",
+          "description": "Whether the transaction is direct or via a broker"
+        },
+        "isSubjectToVat": {
+          "$ref": "#/$defs/applicableType",
+          "description": "Property is subject to VAT."
+        },
+        "dimensions": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "spaces": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/spaceType"
+              }
+            },
+            "habitableArea": {
+              "type": "number",
+              "minimum": 0
+            },
+            "weightedArea": {
+              "type": "number",
+              "minimum": 0
+            },
+            "usableArea": {
+              "type": "number",
+              "minimum": 0
+            },
+            "surfacePPE": {
+              "type": "number",
+              "minimum": 0
+            },
+            "land": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Size of land in m²"
+            }
+          }
+        },
+        "attachments": {
+          "$ref": "#/$defs/attachmentType",
+          "title": "PropertyAttachment"
         }
       },
       "required": ["id", "referenceId", "type", "availability", "localizations"]
@@ -798,6 +2136,11 @@
           "minimum": 0,
           "description": "Property land area in m²"
         },
+        "areaPropertyGround": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property ground area in m²"
+        },
         "areaCellar": {
           "type": "number",
           "minimum": 0,
@@ -962,11 +2305,6 @@
           "type": "integer",
           "description": "Floor number, ground floor is 0, basement floors are negative."
         },
-        "floorLoad": {
-          "type": "number",
-          "minimum": 0,
-          "description": "Maximum floor load in kg/m²"
-        },
         "grossPremium": {
           "type": "number",
           "minimum": 0,
@@ -1007,6 +2345,11 @@
           "description": "A covered structure used to offer limited protection from rain and snow, for two cars.",
           "title": "applicableType",
           "$ref": "#/$defs/applicableType"
+        },
+        "carPort": {
+          "description": "A covered structure used to offer limited protection from rain and snow, custom description.",
+          "title": "Car Port",
+          "type": "string"
         },
         "hasCellar": {
           "description": "Availability of a cellar.",
@@ -1348,6 +2691,11 @@
           "minimum": 0,
           "description": "Total number of rooms."
         },
+        "numberOfBedrooms": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Number of bedrooms."
+        },
         "numberOfShowers": {
           "type": "integer",
           "minimum": 0,
@@ -1444,6 +2792,1426 @@
           "minimum": 0,
           "maximum": 9999,
           "description": "Year of last renovation, in four digits."
+        },
+        "agriculture": {
+          "type": "string"
+        },
+        "hasAirConditioning": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "airFiltrationSystem": {
+          "type": "string"
+        },
+        "hasAlarm": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "amphibiousCar": {
+          "type": "string"
+        },
+
+        "hasAntiTheftAlarm": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasApartment": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasAtomicShelter": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+
+        "hasAtticRoom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasAutomaticWateringSystem": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "automation": {
+          "type": "string"
+        },
+        "hasBabyBed": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "backupWaterSystem": {
+          "type": "string"
+        },
+        "bakery": {
+          "type": "string"
+        },
+
+        "hasBank": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "bar": {
+          "type": "string"
+        },
+        "barbecue": {
+          "type": "string"
+        },
+        "hasBarn": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasBasement": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasBathroom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasBathroomLavatory": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasBathtub": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasBeachAccess": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "beachGames": {
+          "type": "string"
+        },
+        "hasBicyclePath": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasBikeStorage": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "bikes": {
+          "type": "string"
+        },
+        "hasBinStorageArea": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "bookshop": {
+          "type": "string"
+        },
+        "bowlingGreen": {
+          "type": "string"
+        },
+        "brewery": {
+          "type": "string"
+        },
+        "isBright": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "isBuildingLand": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "busHub": {
+          "type": "string"
+        },
+        "hasBusStop": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "businessCenter": {
+          "type": "string"
+        },
+        "butcher": {
+          "type": "string"
+        },
+        "cdPlayer": {
+          "type": "string"
+        },
+        "hasCabin": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+
+        "hasCafeteria": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "café": {
+          "type": "string"
+        },
+        "hasCamera": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "camping": {
+          "type": "string"
+        },
+        "canoe": {
+          "type": "string"
+        },
+        "caretakerHouse": {
+          "type": "string"
+        },
+        "hasCarnotzet": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasCarpeting": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasCarriageHouse": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "caterer": {
+          "type": "string"
+        },
+        "hasCentralVacuumCleaner": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasCentralisedAirConditioning": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasCentralisedVentilation": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasCeramicStove": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "cheesemonger": {
+          "type": "string"
+        },
+        "chemist": {
+          "type": "string"
+        },
+        "hasChildCareCentre": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasChimney": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasChimneyFlue": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasCinema": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasCinemaRoom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasCloset": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "clothes": {
+          "type": "string"
+        },
+        "hasClothesDryer": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "coat": {
+          "type": "string"
+        },
+        "hasCobblestone": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "coffeemaker": {
+          "type": "string"
+        },
+        "coldWater": {
+          "type": "string"
+        },
+        "commercialServices": {
+          "type": "string"
+        },
+        "commissary": {
+          "type": "string"
+        },
+        "hasCommunalPool": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasCommunityLaundryRoom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "computer": {
+          "type": "string"
+        },
+        "computerNetwork": {
+          "type": "string"
+        },
+        "hasConcierge": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasConcrete": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "condominiumGarden": {
+          "type": "string"
+        },
+        "confectioner": {
+          "type": "string"
+        },
+        "connectedThermostat": {
+          "type": "string"
+        },
+        "connection": {
+          "type": "string"
+        },
+        "conventionCenter": {
+          "type": "string"
+        },
+        "hasCorridor": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "cosmetician": {
+          "type": "string"
+        },
+        "hasCourtyard": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasCoveredTerrace": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "crawlSpace": {
+          "type": "string"
+        },
+        "hasCrossCountrySkiTrail": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "culture": {
+          "type": "string"
+        },
+        "hasCupboard": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasCustoms": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "dvdPlayer": {
+          "type": "string"
+        },
+        "dayCare": {
+          "type": "string"
+        },
+        "decoration": {
+          "type": "string"
+        },
+        "defibrillator": {
+          "type": "string"
+        },
+        "hasDigicode": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasDiningRoom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasDiscotheque": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+
+        "diving": {
+          "type": "string"
+        },
+        "doctor": {
+          "type": "string"
+        },
+        "doubleFlowVentilation": {
+          "type": "string"
+        },
+        "hasDoublePanedWindows": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasDoubleReceptionRoom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "isDowntown": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasDressingRoom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "droppedCeiling": {
+          "type": "string"
+        },
+        "drugstore": {
+          "type": "string"
+        },
+        "electricAwnings": {
+          "type": "string"
+        },
+        "electricGate": {
+          "type": "string"
+        },
+        "hasElectricParking": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "electricShutters": {
+          "type": "string"
+        },
+
+        "engineGenerator": {
+          "type": "string"
+        },
+        "hasEntrance": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasEquippedKitchen": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasExteriorLandscaping": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "fabric": {
+          "type": "string"
+        },
+        "hasFax": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasFence": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "fireAlarmSystem": {
+          "type": "string"
+        },
+        "fireHoseCabinets": {
+          "type": "string"
+        },
+        "fireSprinklerSystem": {
+          "type": "string"
+        },
+        "fishing": {
+          "type": "string"
+        },
+        "fishmongers": {
+          "type": "string"
+        },
+        "hasFitnessRoom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "floatingPool": {
+          "type": "string"
+        },
+        "hasFloorHeating": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "florist": {
+          "type": "string"
+        },
+        "flyboard": {
+          "type": "string"
+        },
+        "foodservice": {
+          "type": "string"
+        },
+        "freezer": {
+          "type": "string"
+        },
+        "fruitAndVegetables": {
+          "type": "string"
+        },
+        "funeral": {
+          "type": "string"
+        },
+        "hasFunicular": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "isFurnished": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "furnitureStore": {
+          "type": "string"
+        },
+        "galetas": {
+          "type": "string"
+        },
+        "gallery": {
+          "type": "string"
+        },
+        "hasGarden": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasGardenBench": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "gardenCentre": {
+          "type": "string"
+        },
+        "hasGardenShelter": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasGardian": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "gas": {
+          "type": "string"
+        },
+        "gasStation": {
+          "type": "string"
+        },
+        "hasGatedEntrance": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasGolf": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasGolfCourse": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasGranite": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasGravel": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasGreenLandscape": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasGreenery": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "grocer": {
+          "type": "string"
+        },
+        "grocery": {
+          "type": "string"
+        },
+        "groomer": {
+          "type": "string"
+        },
+        "haberdasher": {
+          "type": "string"
+        },
+        "hairDryer": {
+          "type": "string"
+        },
+        "hairdresser": {
+          "type": "string"
+        },
+        "hasHallway": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasHammam": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasHandicapAccess": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hardwareShop": {
+          "type": "string"
+        },
+        "helipad": {
+          "type": "string"
+        },
+        "highPower": {
+          "type": "string"
+        },
+        "hob": {
+          "type": "string"
+        },
+        "homeCinema": {
+          "type": "string"
+        },
+        "hospital/clinic": {
+          "type": "string"
+        },
+        "hotWater": {
+          "type": "string"
+        },
+        "hotel": {
+          "type": "string"
+        },
+        "householdElectrical": {
+          "type": "string"
+        },
+        "hoverboard": {
+          "type": "string"
+        },
+        "hovercraft": {
+          "type": "string"
+        },
+        "hydraulicPlatform": {
+          "type": "string"
+        },
+        "hasIndoorCarPark": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasIndoorGarage": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "inflationStation": {
+          "type": "string"
+        },
+        "insurer": {
+          "type": "string"
+        },
+        "hasIntercomSystem": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "interfacing": {
+          "type": "string"
+        },
+        "intermediateFloor": {
+          "type": "string"
+        },
+        "internet": {
+          "type": "string"
+        },
+        "hasInternetConnection": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "iron": {
+          "type": "string"
+        },
+        "irrigationSprinkler": {
+          "type": "string"
+        },
+        "hasJacuzzi": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "jetSki": {
+          "type": "string"
+        },
+        "jeweller": {
+          "type": "string"
+        },
+        "hasKitchenCorner": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "kiteSurf": {
+          "type": "string"
+        },
+        "hasLake": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasLaminate": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasLanding": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "laundry": {
+          "type": "string"
+        },
+        "hasLibrary": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "lift": {
+          "type": "string"
+        },
+        "hasLinenRoom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "linens": {
+          "type": "string"
+        },
+        "linoleum": {
+          "type": "string"
+        },
+        "hasLivingRoom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "locksmith": {
+          "type": "string"
+        },
+        "hasMaidsRoom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasMaidsStudio": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasMaintenanceRoom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasMarble": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasMarina": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasMasterBedroom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasMeetingRoom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "metalShutters": {
+          "type": "string"
+        },
+        "metro": {
+          "type": "string"
+        },
+        "hasMezzanine": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasMicrowaveOven": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasMooringSpace": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasMosquitoNet": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "motorizedFlysheet": {
+          "type": "string"
+        },
+        "hasMotorwayEntranceExit": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasMuseum": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "isNearAirport": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "isNearPublicTransportation": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "nightclub": {
+          "type": "string"
+        },
+        "nonFlooding": {
+          "type": "string"
+        },
+        "officeSupplies": {
+          "type": "string"
+        },
+        "offices": {
+          "type": "string"
+        },
+        "onMainRoad": {
+          "type": "string"
+        },
+
+        "optician": {
+          "type": "string"
+        },
+        "hasOutbuilding": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasOutdoorCarPark": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasOutdoorGarage": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasOutdoorLighting": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "outsideCamera": {
+          "type": "string"
+        },
+        "oven": {
+          "type": "string"
+        },
+        "paddle": {
+          "type": "string"
+        },
+        "painting": {
+          "type": "string"
+        },
+        "panel": {
+          "type": "string"
+        },
+        "parentalSuite": {
+          "type": "string"
+        },
+        "parging": {
+          "type": "string"
+        },
+        "hasPark": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+
+        "hasParquet": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasPatio": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "perfumery": {
+          "type": "string"
+        },
+        "pergola": {
+          "type": "string"
+        },
+        "petStore": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "photo": {
+          "type": "string"
+        },
+        "hasPhotovoltaicPanels": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "placeOfWorship": {
+          "type": "string"
+        },
+        "hasPlayRoom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+
+        "hasPond": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+
+        "hasPoolHouse": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "porkButcher": {
+          "type": "string"
+        },
+        "hasPort": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasPostOffice": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasPrayerRoom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "press": {
+          "type": "string"
+        },
+        "pressing": {
+          "type": "string"
+        },
+        "pressurizedAir": {
+          "type": "string"
+        },
+        "hasPrimarySchool": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasPrivateDock": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasPrivateLaundryRoom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "publicParking": {
+          "type": "string"
+        },
+        "publicPool": {
+          "type": "string"
+        },
+        "rJ45Cable": {
+          "type": "string"
+        },
+        "hasRadiatorHeating": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "realEstateAgent": {
+          "type": "string"
+        },
+        "hasReception": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "isReceptionNoctidial": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasReceptionRoom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "recreation": {
+          "type": "string"
+        },
+        "refrigerator": {
+          "type": "string"
+        },
+        "hasRestaurants": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasRooftopTerrace": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasRootCellar": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "rubber": {
+          "type": "string"
+        },
+        "safe": {
+          "type": "string"
+        },
+        "hasSatellite": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasSauna": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasSchools": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "scooter": {
+          "type": "string"
+        },
+        "hasSea": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "seabob": {
+          "type": "string"
+        },
+        "hasSecomat": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasSecondarySchool": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "securityDoor": {
+          "type": "string"
+        },
+        "segway": {
+          "type": "string"
+        },
+        "selfEmployed": {
+          "type": "string"
+        },
+        "sexShop": {
+          "type": "string"
+        },
+        "shoes": {
+          "type": "string"
+        },
+        "shoppingCentre": {
+          "type": "string"
+        },
+        "shops": {
+          "type": "string"
+        },
+        "hasShower": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasShowerRoom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasShowerRoomOrLavatory": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "isSilent": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasSimplePanedWindows": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasSkiStorage": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasSkiTrail": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasSlate": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "slidingWindows": {
+          "type": "string"
+        },
+        "snack": {
+          "type": "string"
+        },
+        "solarArray": {
+          "type": "string"
+        },
+        "hasSolarium": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "spa": {
+          "type": "string"
+        },
+        "hasSportsCentre": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "spring": {
+          "type": "string"
+        },
+        "station": {
+          "type": "string"
+        },
+        "hasSteamOven": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasStockroom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasStone": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasStorageRoom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasStove": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasStudy": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasSuite": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "supermarket": {
+          "type": "string"
+        },
+        "hasSwedishStove": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasSwedishStovePipes": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "synagogue": {
+          "type": "string"
+        },
+        "tgvStation": {
+          "type": "string"
+        },
+        "tvDistribution": {
+          "type": "string"
+        },
+        "tableware": {
+          "type": "string"
+        },
+        "hasTar": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "taxi": {
+          "type": "string"
+        },
+        "teaRoom": {
+          "type": "string"
+        },
+        "hasTelephone": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "television": {
+          "type": "string"
+        },
+        "hasTennisCourt": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasTerrace": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "theater": {
+          "type": "string"
+        },
+        "hasTile": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasTiles": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "tobacconist": {
+          "type": "string"
+        },
+        "toilet": {
+          "type": "string"
+        },
+        "hasTrainStation": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "tram": {
+          "type": "string"
+        },
+        "travelAgency": {
+          "type": "string"
+        },
+        "hasTriplePanedWindows": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasTripleReceptionRoom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "university": {
+          "type": "string"
+        },
+        "vegetableFiber": {
+          "type": "string"
+        },
+        "veranda": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "videoArcade": {
+          "type": "string"
+        },
+        "videoGame": {
+          "type": "string"
+        },
+        "videoSecurity": {
+          "type": "string"
+        },
+        "hasVideophone": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasVillaArea": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasVillage": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasVineyards": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "vinyl": {
+          "type": "string"
+        },
+        "hasVisitorCarPark": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasVisitorsToilet": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "wakeboard": {
+          "type": "string"
+        },
+        "wallCloset": {
+          "type": "string"
+        },
+        "wallpaper": {
+          "type": "string"
+        },
+        "hasWatchtower": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "waterFiltrationSystem": {
+          "type": "string"
+        },
+        "waterSlide": {
+          "type": "string"
+        },
+        "hasWaterSoftner": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "waterSupply": {
+          "type": "string"
+        },
+        "hasWaterfront": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "waterpark": {
+          "type": "string"
+        },
+        "well": {
+          "type": "string"
+        },
+        "wellDrilling": {
+          "type": "string"
+        },
+        "wharf": {
+          "type": "string"
+        },
+        "whirlpoolTub": {
+          "type": "string"
+        },
+        "windowShade": {
+          "type": "string"
+        },
+        "hasWineCellar": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasWinterGarden": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "wiringCloset": {
+          "type": "string"
+        },
+        "hasWorkroom": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "hasWorkshop": {
+          "$ref": "#/$defs/applicableType",
+          "title": "applicableType"
+        },
+        "style": {
+          "type": "string",
+          "enum": [
+            "Classic",
+            "Modern",
+            "Rustic"
+          ]
+        },
+        "position": {
+          "type": "string",
+          "enum": [
+            "basement",
+            "floor",
+            "garden",
+            "ground",
+            "lastStage",
+            "loft",
+            "lowerLevel",
+            "mezzanine",
+            "penthouse",
+            "raised",
+            "singleStorey",
+            "splitLevel",
+            "upperLevel",
+            "waterfront"
+          ]
+        },
+        "orientation": {
+          "type": "array",
+          "description": "Which orientation(s) the property has.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "east",
+              "north",
+              "south",
+              "west",
+              "north-east",
+              "north-west",
+              "south-east",
+              "south-west"
+            ]
+          }
+        },
+        "view": {
+          "type": "array",
+          "description": "What you can see out of windows of the property.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "city",
+              "commanding",
+              "countryside",
+              "courtyard",
+              "exterior",
+              "forest",
+              "garden",
+              "golf",
+              "greenery",
+              "harbor",
+              "hills",
+              "interior",
+              "lake",
+              "main stem",
+              "monument",
+              "mountain",
+              "nice view",
+              "obstructed",
+              "panoramic",
+              "park",
+              "river",
+              "rural",
+              "sea",
+              "ski slopes",
+              "sky",
+              "slight",
+              "street",
+              "swimming pool",
+              "unobstructed",
+              "village"
+            ]
+          }
+        },
+        "acoustics": {
+          "type": "string",
+          "description": "How loud is the environment.",
+          "enum": [
+            "noisy",
+            "normal",
+            "calm"
+          ]
+        },
+        "faceToFace": {
+          "$ref": "#/$defs/applicableType",
+          "title": "face-to-face",
+          "description": "Property is located fa-to-face with another property."
+        },
+        "energy": {
+          "type": "string",
+          "description": "Energy source.",
+          "enum": [
+            "aero-thermal",
+            "charcoal",
+            "electric",
+            "fuel oil",
+            "gas",
+            "geothermal probe",
+            "heat pump",
+            "hot water",
+            "pellets",
+            "remote",
+            "solar",
+            "wood"
+          ]
+        },
+        "amperes": {
+          "type": "number",
+          "minimum": 0
+        },
+        "isPrestige": {
+          "$ref": "#/$defs/applicableType"
+        },
+        "groundLoad": {
+          "type": "number",
+          "format": "float",
+          "description": "Load-bearing capacity of the ground or floor, kg/m²."
+        },
+        "isEnvironmentUrban": {
+          "$ref": "#/$defs/applicableType"
+        },
+        "isEnvironmentCountryside": {
+          "$ref": "#/$defs/applicableType"
+        },
+        "isEnvironmentMountainside": {
+          "$ref": "#/$defs/applicableType"
         }
       }
     },
@@ -1457,10 +4225,16 @@
           "type": "string",
           "pattern": "[A-Z]{2}"
         },
+        "canton": {
+          "type": "string"
+        },
         "locality": {
           "type": "string"
         },
         "region": {
+          "type": "string"
+        },
+        "quarter": {
           "type": "string"
         },
         "postalCode": {
@@ -1509,33 +4283,7 @@
           "$ref": "#/$defs/currencyType"
         },
         "rent": {
-          "description": "Recurring rental price.",
-          "title": "propertyPriceRent",
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "gross": {
-              "description": "Gross rental price.",
-              "type": "integer",
-              "minimum": 0
-            },
-            "net": {
-              "description": "Net rental price.",
-              "type": "integer",
-              "minimum": 0
-            },
-            "extra": {
-              "description": "Extra rental price.",
-              "type": "integer",
-              "minimum": 0
-            },
-            "interval": {
-              "$ref": "#/$defs/priceIntervalType"
-            },
-            "referring": {
-              "$ref": "#/$defs/priceReferringType"
-            }
-          }
+          "$ref": "#/$defs/priceRentType"
         },
         "buy": {
           "description": "One time buy prices.",
@@ -1606,6 +4354,37 @@
           },
           "required": ["amount"]
         },
+        "additionalCharges": {
+          "type": "object",
+          "description": "Additional monthly or annual charges.",
+          "properties": {
+            "includedInPrice": {
+              "$ref": "#/$defs/applicableType",
+              "title": "IncludedInPrice",
+              "description": "Defines if additional charges are included into the main rent/buy price."
+            },
+            "annual": {
+              "type": "integer",
+              "description": "Annual charges for the property",
+              "minimum": 0
+            },
+            "heating": {
+              "type": "integer",
+              "description": "Monthly charges for the property heating.",
+              "minimum": 0
+            },
+            "ppe": {
+              "type": "integer",
+              "description": "Monthly charges for the property PPE.",
+              "minimum": 0
+            },
+            "commercialExpenses": {
+              "type": "integer",
+              "description": "Annual charges for the property commercial expenses per square meter.",
+              "minimum": 0
+            }
+          }
+        },
         "additionalOffers": {
           "title": "AdditionalOffers",
           "type": "array",
@@ -1613,11 +4392,72 @@
           "items": {
             "$ref": "#/$defs/additionalOfferType"
           }
+        },
+        "extra": {
+          "type": "object",
+          "description": "Extra price-related values.",
+          "properties": {
+            "currentIncome": {
+              "$ref": "#/$defs/priceRentType",
+              "description": "Current income for the property in rent."
+            },
+            "yield": {
+              "type": "number",
+              "description": "Rental yield, %",
+              "minimum": 0
+            },
+            "tax": {
+              "type": "number",
+              "minimum": 0
+            },
+            "taxRate": {
+              "type": "number",
+              "description": "The tax rate of the property, %.",
+              "minimum": 0
+            },
+            "renovationFund": {
+              "type": "number",
+              "minimum": 0
+            },
+            "stockInTrade": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    "priceRentType": {
+      "type": "object",
+      "title": "propertyPriceRent",
+      "description": "Recurring rental price.",
+      "additionalProperties": false,
+      "properties": {
+        "gross": {
+          "description": "Gross rental price.",
+          "type": "integer",
+          "minimum": 0
+        },
+        "net": {
+          "description": "Net rental price.",
+          "type": "integer",
+          "minimum": 0
+        },
+        "extra": {
+          "description": "Extra rental price.",
+          "type": "integer",
+          "minimum": 0
+        },
+        "interval": {
+          "$ref": "#/$defs/priceIntervalType"
+        },
+        "referring": {
+          "$ref": "#/$defs/priceReferringType"
         }
       }
     },
     "organizationType": {
-      "description": "An organization selling the property.",
+      "description": "An organization.",
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -1648,6 +4488,18 @@
         },
         "website": {
           "$ref": "#/$defs/websiteType"
+        },
+        "languageCode": {
+          "$ref": "#/$defs/languageCodeType"
+        },
+        "logo": {
+          "$ref": "#/$defs/attachmentImageType"
+        },
+        "socialNetwork": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/socialNetworkType"
+          }
         }
       }
     },
@@ -1679,8 +4531,30 @@
         },
         "note": {
           "type": "string"
+        },
+        "avatar": {
+          "$ref": "#/$defs/attachmentImageType"
+        },
+        "preferredLanguage": {
+          "$ref": "#/$defs/languageCodeType"
+        },
+        "address": {
+          "$ref": "#/$defs/addressType"
         }
       }
+    },
+    "socialNetworkType": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": ["url"]
     },
     "applicableType": {
       "title": "ApplicableType",
@@ -1793,82 +4667,8 @@
           "description": "Description of available and included equipment."
         },
         "attachments": {
-          "type": "object",
-          "additionalProperties": false,
-          "title": "PropertyAttachment",
-          "description": "Sequence links, files, embeds and media.",
-          "properties": {
-            "images": {
-              "type": "array",
-              "title": "Image",
-              "items": {
-                "$ref": "#/$defs/attachmentImageType"
-              }
-            },
-            "logos": {
-              "type": "array",
-              "title": "Logo",
-              "items": {
-                "$ref": "#/$defs/attachmentLogoType"
-              }
-            },
-            "documents": {
-              "type": "array",
-              "title": "Document",
-              "items": {
-                "$ref": "#/$defs/attachmentDocumentType",
-                "description": "Specifications, brochures and other descriptive files."
-              }
-            },
-            "plans": {
-              "type": "array",
-              "title": "Document",
-              "items": {
-                "$ref": "#/$defs/attachmentDocumentType",
-                "description": "Floorplan image or document."
-              }
-            },
-            "landRegisterExtracts": {
-              "type": "array",
-              "title": "Document",
-              "items": {
-                "$ref": "#/$defs/attachmentDocumentType",
-                "description": "A document given to political officials (commune) with basic information portraying the property and its registrational validity."
-              }
-            },
-            "directLinks": {
-              "type": "array",
-              "title": "Link",
-              "items": {
-                "$ref": "#/$defs/attachmentLinkType",
-                "description": "'direct-link' defines a link that will link visitors 'directly' to the offer. For example from a List of properties one will be linked to the project website directly if clicked. This is usually used by websites, and portals tend to ignore that and can opt into simply representing them as normal 'link' types."
-              }
-            },
-            "links": {
-              "type": "array",
-              "title": "Link",
-              "items": {
-                "$ref": "#/$defs/attachmentLinkType",
-                "description": "An arbitrary related link."
-              }
-            },
-            "virtualTourLinks": {
-              "type": "array",
-              "title": "Link",
-              "items": {
-                "$ref": "#/$defs/attachmentLinkType",
-                "description": "Virtual tour link, typically used for embeddings and integrations."
-              }
-            },
-            "youTubeLinks": {
-              "type": "array",
-              "title": "Link",
-              "items": {
-                "$ref": "#/$defs/attachmentLinkType",
-                "description": "Video link, typically used for embeddings and integrations."
-              }
-            }
-          }
+          "$ref": "#/$defs/attachmentType",
+          "title": "PropertyAttachment"
         },
         "visitInformation": {
           "type": "string",
@@ -1884,6 +4684,83 @@
         }
       },
       "required": ["title", "languageCode"]
+    },
+    "attachmentType": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Sequence of links, files, embeds and media.",
+      "properties": {
+        "images": {
+          "type": "array",
+          "title": "Image",
+          "items": {
+            "$ref": "#/$defs/attachmentImageType"
+          }
+        },
+        "logos": {
+          "type": "array",
+          "title": "Logo",
+          "items": {
+            "$ref": "#/$defs/attachmentLogoType"
+          }
+        },
+        "documents": {
+          "type": "array",
+          "title": "Document",
+          "items": {
+            "$ref": "#/$defs/attachmentDocumentType",
+            "description": "Specifications, brochures and other descriptive files."
+          }
+        },
+        "plans": {
+          "type": "array",
+          "title": "Document",
+          "items": {
+            "$ref": "#/$defs/attachmentDocumentType",
+            "description": "Floorplan image or document."
+          }
+        },
+        "landRegisterExtracts": {
+          "type": "array",
+          "title": "Document",
+          "items": {
+            "$ref": "#/$defs/attachmentDocumentType",
+            "description": "A document given to political officials (commune) with basic information portraying the property and its registrational validity."
+          }
+        },
+        "directLinks": {
+          "type": "array",
+          "title": "Link",
+          "items": {
+            "$ref": "#/$defs/attachmentLinkType",
+            "description": "'direct-link' defines a link that will link visitors 'directly' to the offer. For example from a List of properties one will be linked to the project website directly if clicked. This is usually used by websites, and portals tend to ignore that and can opt into simply representing them as normal 'link' types."
+          }
+        },
+        "links": {
+          "type": "array",
+          "title": "Link",
+          "items": {
+            "$ref": "#/$defs/attachmentLinkType",
+            "description": "An arbitrary related link."
+          }
+        },
+        "virtualTourLinks": {
+          "type": "array",
+          "title": "Link",
+          "items": {
+            "$ref": "#/$defs/attachmentLinkType",
+            "description": "Virtual tour link, typically used for embeddings and integrations."
+          }
+        },
+        "youTubeLinks": {
+          "type": "array",
+          "title": "Link",
+          "items": {
+            "$ref": "#/$defs/attachmentLinkType",
+            "description": "Video link, typically used for embeddings and integrations."
+          }
+        }
+      }
     },
     "attachmentEventType": {
       "type": "object",
@@ -1942,6 +4819,7 @@
           "type": "string",
           "title": "AdditionalOfferType",
           "enum": [
+            "parking",
             "parking-exterior-space",
             "parking-carport",
             "parking-garage",
@@ -1954,6 +4832,19 @@
             "room-workroom",
             "room-storage-basement"
           ]
+        },
+        "includedInPrice": {
+          "$ref": "#/$defs/applicableType",
+          "title": "IncludedInPrice",
+          "description": "Defines if this additional offer price is included into the main rent/buy price."
+        },
+        "isOptional": {
+          "$ref": "#/$defs/applicableType",
+          "title": "IsOptional",
+          "description": "Defines if this additional offer is optional. If it's mandatory - a client can't decline it."
+        },
+        "vat": {
+          "$ref": "#/$defs/applicableType"
         },
         "interval": {
           "$ref": "#/$defs/priceIntervalType"
@@ -1971,6 +4862,188 @@
           "minimum": 0
         }
       }
+    },
+    "spaceType": {
+      "type": "object",
+      "description": "Property space",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "enum": [
+            "Accommodation(s)",
+            "Apartment(s)",
+            "Arcade(s)",
+            "Attic(s)",
+            "Balcony(ies)",
+            "Barn(s)",
+            "Basement(s)",
+            "Bathroom(s)",
+            "Bathroom(s) / Lavatory(ies)",
+            "Bedroom(s)",
+            "Bike storage room(s)",
+            "Box(es)",
+            "Cabin(s)",
+            "Cafeteria(s)",
+            "Carnotzet(s)",
+            "Cellar(s)",
+            "Closet(s)",
+            "Corridor(s)",
+            "Courtyard(s)",
+            "Cupboard(s)",
+            "Dining room(s)",
+            "Nightclub(s)",
+            "Double reception room(s)",
+            "Entrance(s)",
+            "Exercise room(s)",
+            "Garage(s)",
+            "Garbage room(s)",
+            "Garden(s)",
+            "Garden shelter(s)",
+            "Hall(s)",
+            "Hallway(s)",
+            "Hammam(s)",
+            "Home cinema(s)",
+            "House(s)",
+            "Indoor parking(s)",
+            "Indoor swimming pool(s)",
+            "Kitchen(s)",
+            "Land(s)",
+            "Landing(s)",
+            "Laundry room(s)",
+            "Lavatory(ies)",
+            "Library(ies)",
+            "Linen room(s)",
+            "Living-room(s)",
+            "Living room(s)/dining area(s)",
+            "Loft(s)",
+            "Loggia(s)",
+            "Maid's room(s)",
+            "Maid's studio(s)",
+            "Maintenance room(s)",
+            "Master bedroom(s)",
+            "Meeting room(s)",
+            "Mezzanine(s)",
+            "Not used",
+            "Open space(s)",
+            "Other(s)",
+            "Outbuilding(s)",
+            "Outdoor parking(s)",
+            "Panic room(s)",
+            "Park(s)",
+            "Parking(s)",
+            "Patio(s)",
+            "Play room(s)",
+            "Pool house(s)",
+            "Prayer room(s)",
+            "Reception room(s)",
+            "Room(s)",
+            "Root cellar(s)",
+            "Sauna(s)",
+            "Shed(s)",
+            "Shop(s)",
+            "Shower room(s)",
+            "Shower room(s)/ Lavatory(ies)",
+            "Ski storage room(s)",
+            "Solarium(s)",
+            "Stair(s)",
+            "Stockroom(s)",
+            "Storage room(s)",
+            "Studio(s)",
+            "Study(ies)",
+            "Suite(s)",
+            "Terrace(s)",
+            "Unit(s)",
+            "Veranda(s)",
+            "Walk-in closet(s)",
+            "Warehouse(s)",
+            "Watchtower(s)",
+            "Workshop(s)",
+            "Exterior swimming pool(s)",
+            "Summer kitchen",
+            "Spa",
+            "Gallery",
+            "Boathouse",
+            "Dining room / kitchen",
+            "Equipped kitchen",
+            "Semi-equipped kitchen",
+            "Angle kitchen",
+            "Kitchenette",
+            "American kitchen",
+            "Parcel",
+            "Car shelter",
+            "Roof top terrace",
+            "Lower ground floor",
+            "Storehouse",
+            "Ski locker",
+            "Kitchen/living room",
+            "Open kitchen",
+            "Space type",
+            "Jacuzzi",
+            "Wine cellar",
+            "Outdoor room",
+            "Exterior",
+            "Surface type",
+            "Winter garden",
+            "Covered terrace",
+            "Covered balcony",
+            "Reducted balcony",
+            "Garden shed",
+            "Disponible",
+            "Combles",
+            "Galetas",
+            "Ground floor"
+          ]
+        },
+        "quantity": {
+          "type": "number",
+          "minimum": 0,
+          "description": "How many such spaces there are in the property."
+        },
+        "usableArea": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Usable area in m² per each space unit."
+        },
+        "habitableArea": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Habitable area in m² per each space unit."
+        },
+        "weighting": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Weighting of each space unit, m²."
+        },
+        "isHabitable": {
+          "$ref": "#/$defs/applicableType",
+          "description": "Space is habitable."
+        },
+        "surfacePPE": {
+          "type": "number",
+          "minimum": 0
+        },
+        "comment": {
+          "type": "array",
+          "description": "Sequence of language specific comments, related to the space.",
+          "items": {
+            "type": "object",
+            "description": "One for each language, a set of language specific comments, related to the space.",
+            "additionalProperties": false,
+            "properties": {
+              "languageCode": {
+                "$ref": "#/$defs/languageCodeType"
+              },
+              "text": {
+                "type": "string",
+                "description": "Comment text."
+              }
+            },
+            "required": ["languageCode", "text"]
+          }
+        }
+      },
+      "required": ["name", "quantity", "isHabitable"]
     }
   }
 }
